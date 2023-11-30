@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemigoBeta : MonoBehaviour
 {
     public float vida;
-    public void Daño(float daño)
+    public void Dao(float dao)
     {
         vida -= vida;
         if(vida <= 0)

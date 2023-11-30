@@ -29,6 +29,8 @@ public class MovimientoPlayer : MonoBehaviour
     [Header("DobleSalto")]
     public int saltosExtraRestantes;
     public int saltosExtra;
+    public float Dashforce;
+    private bool dash = false;
 
     [Header("SaltoPared")]
     public Transform controladorPared;
@@ -49,6 +51,9 @@ public class MovimientoPlayer : MonoBehaviour
     private bool estabaAgachado = false;
     private bool agachar = false;    
 
+    [Header("Attack")]
+    private bool Attack;
+
     private void Start()
     {
         RB2D = GetComponent<Rigidbody2D>();
@@ -67,6 +72,12 @@ public class MovimientoPlayer : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             salto = true;
+        }
+
+        if(saltosExtraRestantes > 0 && Input.GetButtonDown("Dash"))
+        {
+            dash = true;
+            Dash();
         }
 
         if (enSuelo)
@@ -95,7 +106,6 @@ public class MovimientoPlayer : MonoBehaviour
 
         Mover(movimientoHorizontal * Time.fixedDeltaTime, salto, agachar);
 
-        salto = false;
 
         if(deslizando)
         {
@@ -161,15 +171,6 @@ public class MovimientoPlayer : MonoBehaviour
         {
             Salto();
         }
-        else 
-        {
-            if(salto && saltosExtraRestantes > 0 && !deslizando)
-            {
-                Salto();
-                saltosExtraRestantes -= 1;
-            }
-        }
-        
 
         if (salto && enPared && deslizando)
         {
@@ -181,6 +182,14 @@ public class MovimientoPlayer : MonoBehaviour
     {
         salto = false;
         RB2D.AddForce(new Vector2(0f, fuerzaDeSalto));
+
+    }
+
+    private void Dash()
+    {
+        saltosExtraRestantes -= 1;
+        dash = false;
+        RB2D.AddForce(new Vector2(Dashforce, 0f));
 
     }
 
@@ -202,6 +211,7 @@ public class MovimientoPlayer : MonoBehaviour
     private void Girar()
     {
         mirandoDerecha = !mirandoDerecha;
+        Dashforce*=-1;
         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
     }
 
