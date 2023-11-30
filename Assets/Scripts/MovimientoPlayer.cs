@@ -30,7 +30,7 @@ public class MovimientoPlayer : MonoBehaviour
     public int saltosExtraRestantes;
     public int saltosExtra;
     public float Dashforce;
-    private bool dash = false;
+    public bool dash = false;
 
     [Header("SaltoPared")]
     public Transform controladorPared;
@@ -52,7 +52,7 @@ public class MovimientoPlayer : MonoBehaviour
     private bool agachar = false;    
 
     [Header("Attack")]
-    private bool Attack;
+    private bool Attack = false;
 
     private void Start()
     {
@@ -68,6 +68,7 @@ public class MovimientoPlayer : MonoBehaviour
         input.y = Input.GetAxisRaw("Vertical");
 
         animator.SetBool("enPared", deslizando);
+        
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -78,6 +79,11 @@ public class MovimientoPlayer : MonoBehaviour
         {
             dash = true;
             Dash();
+        }
+
+        if(Input.GetButtonDown("Fire1"))
+        {
+            animator.Play("Attack");
         }
 
         if (enSuelo)
@@ -188,6 +194,7 @@ public class MovimientoPlayer : MonoBehaviour
     private void Dash()
     {
         saltosExtraRestantes -= 1;
+        animator.Play("Dash");
         dash = false;
         RB2D.AddForce(new Vector2(Dashforce, 0f));
 
