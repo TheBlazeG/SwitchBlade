@@ -386,85 +386,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 594277628966738506, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: Dashforce
-      value: 1200
-      objectReference: {fileID: 0}
-    - target: {fileID: 594277628966738506, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: saltosExtra
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 594277628966738506, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: fuerzaDeSalto
-      value: 1200
-      objectReference: {fileID: 0}
-    - target: {fileID: 594277628966738506, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: fuerzaSaltoParedX
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 594277628966738506, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: fuerzaSaltoParedY
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 594277628966738506, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: queEsSuelo.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 594277628966738506, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: suavizadoDeMovimiento
-      value: 0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 594277628966738506, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: velocidadDeMovimiento
-      value: 650
-      objectReference: {fileID: 0}
     - target: {fileID: 4262148879185620111, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4696730885450365635, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 5237053610852469128, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5237053610852469128, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5237053610852469128, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 5906188795366503330, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: m_Size.x
-      value: 0.18319514
-      objectReference: {fileID: 0}
-    - target: {fileID: 5906188795366503330, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: m_Size.y
-      value: 0.14382002
-      objectReference: {fileID: 0}
-    - target: {fileID: 5906188795366503330, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.06159757
-      objectReference: {fileID: 0}
-    - target: {fileID: 5906188795366503330, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.13739018
-      objectReference: {fileID: 0}
-    - target: {fileID: 6980161257319301887, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6980161257319301887, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 612417339
-      objectReference: {fileID: 0}
-    - target: {fileID: 7658732189106092205, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7658732189106092205, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
       propertyPath: m_LocalPosition.x
@@ -505,26 +429,6 @@ PrefabInstance:
     - target: {fileID: 7658732189106092205, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8495023382594416362, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8495023382594416362, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 8601570944176140494, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: m_GravityScale
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9006734628739444858, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9006734628739444858, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

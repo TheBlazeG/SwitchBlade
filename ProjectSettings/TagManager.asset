@@ -6,6 +6,10 @@ TagManager:
   tags:
   - EnemigoBeta
   - Wall
+  - PlayerSword
+  - Bullet
+  - Boss
+  - BossManager
   layers:
   - Default
   - TransparentFX
@@ -42,6 +46,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Scenario
+    uniqueID: 858801653
     locked: 0
   - name: Player
     uniqueID: 612417339
