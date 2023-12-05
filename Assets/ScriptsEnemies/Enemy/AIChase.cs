@@ -13,7 +13,6 @@ public class AIChase : MonoBehaviour
     Rigidbody2D rb;
     Vector3 localScale;
     float dirX;
-    bool facingLeft = true;
 
     private void Start()
     {
@@ -53,12 +52,10 @@ public class AIChase : MonoBehaviour
 
         if ((dirX - player.transform.position.x < 0 && distancePlayer < range) || (distancePlayer > range && dirX < home.transform.position.x))
         {
-            facingLeft = false;
             localScale.x = 1;
         }
         else
         {
-            facingLeft = true;
             localScale.x = -1;
         }
         transform.localScale = localScale;
