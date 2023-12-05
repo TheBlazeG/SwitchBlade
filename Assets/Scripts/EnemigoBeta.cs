@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class EnemigoBeta : MonoBehaviour
 {
-    public float vida;
-    public void Dao(float dao)
+    private int vida;
+    public int baselife;
+
+    private void Start()
     {
-        vida -= vida;
+        vida = baselife;
+    }
+    public void Dao(int dao)
+    {
+        vida -= dao;
         if(vida <= 0)
         {
             Muerte();
         }
     }
 
-    private void Muerte()
+    public void Muerte()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        vida = baselife;
     }
 }

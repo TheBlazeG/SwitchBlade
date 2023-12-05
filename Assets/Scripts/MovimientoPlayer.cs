@@ -54,6 +54,9 @@ public class MovimientoPlayer : MonoBehaviour
     [Header("Attack")]
     private bool Attack = false;
 
+    [Header("Life")]
+    public float life;
+
     private void Start()
     {
         RB2D = GetComponent<Rigidbody2D>();
@@ -83,7 +86,8 @@ public class MovimientoPlayer : MonoBehaviour
 
         if(Input.GetButtonDown("Fire1"))
         {
-            animator.Play("Attack");
+            Debug.Log("pp");
+            StartCoroutine(attack());
         }
 
         if (enSuelo)
@@ -232,4 +236,24 @@ public class MovimientoPlayer : MonoBehaviour
         Gizmos.DrawWireSphere(controladorTecho.position, radioTecho);
     }
 
+    public void PlayerLife(float Damage)
+    {
+        life -= Damage;
+        if (life <= 0)
+        {
+            Murision();
+        }
+    }
+
+    public void Murision()
+    {
+        gameObject.SetActive(false);
+    }
+    IEnumerator attack()
+    {
+        animator.SetBool("Ataque", true); 
+        yield return new WaitForSeconds(.0f) ;
+        animator.SetBool("Ataque", false);
+       
+    }
 }
