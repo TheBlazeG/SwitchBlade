@@ -86,7 +86,8 @@ public class MovimientoPlayer : MonoBehaviour
 
         if(Input.GetButtonDown("Fire1"))
         {
-            animator.Play("Attack");
+            Debug.Log("pp");
+            StartCoroutine(attack());
         }
 
         if (enSuelo)
@@ -247,5 +248,12 @@ public class MovimientoPlayer : MonoBehaviour
     public void Murision()
     {
         gameObject.SetActive(false);
+    }
+    IEnumerator attack()
+    {
+        animator.SetBool("Ataque", true); 
+        yield return new WaitForSeconds(.0f) ;
+        animator.SetBool("Ataque", false);
+       
     }
 }
