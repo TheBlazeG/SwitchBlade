@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    public float Fuerza;
+    public int Fuerza;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("EnemigoBeta"))
         {
             other.GetComponent<EnemigoBeta>().Dao(Fuerza);
-        }
-
-        if(other.CompareTag("Wall"))
-        {
-            Destroy(gameObject);
-        }   
+        }  
     }
 }
