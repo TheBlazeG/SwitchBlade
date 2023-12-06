@@ -12,6 +12,7 @@ TagManager:
   - BossManager
   - EnemyAir
   - Platform
+  - Obstacle
   layers:
   - Default
   - TransparentFX

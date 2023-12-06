@@ -77,7 +77,7 @@ public class EnemyIdleBehaviour : MonoBehaviour
                 }
                 break;
             case "Obstacle":
-                rb.AddForce(Vector2.up * 500f);
+                rb.AddForce(Vector2.up * 350f);
                 //print("obstaculo");
                 break;
 

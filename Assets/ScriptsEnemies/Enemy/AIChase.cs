@@ -24,10 +24,9 @@ public class AIChase : MonoBehaviour
     void Update()
     {
         distance = Vector2.Distance(transform.position, home.transform.position);
-        distancePlayer = Vector2.Distance(home.transform.position, player.transform.position);
+        distancePlayer = Vector2.Distance(player.transform.position, home.transform.position);
         Vector2 directionPlayer = player.transform.position - transform.position;
         directionPlayer.Normalize();
-        float angle = Mathf.Atan2(0, directionPlayer.x) * Mathf.Rad2Deg;
 
 
         if (distance < range && distancePlayer < range)
@@ -67,7 +66,7 @@ public class AIChase : MonoBehaviour
         {
 
             case "Obstacle":
-                rb.AddForce(Vector2.up * 500f);
+                rb.AddForce(Vector2.up * 350f);
                 //print("obstaculo");
                 break;
 
