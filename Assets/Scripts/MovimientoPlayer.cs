@@ -49,9 +49,10 @@ public class MovimientoPlayer : MonoBehaviour
     public float multiplicadorVelocidadAgachado;
     public Collider2D colisionadorAgachado;
     private bool estabaAgachado = false;
-    private bool agachar = false;    
+    private bool agachar = false;
 
     [Header("Attack")]
+    public AudioSource swordAudioSource;
     private bool Attack = false;
 
     [Header("Life")]
@@ -87,6 +88,7 @@ public class MovimientoPlayer : MonoBehaviour
         if(Input.GetButtonDown("Fire1"))
         {
             Debug.Log("pp");
+            swordAudioSource.Play();
             StartCoroutine(attack());
         }
 
@@ -251,7 +253,7 @@ public class MovimientoPlayer : MonoBehaviour
     }
     IEnumerator attack()
     {
-        animator.SetBool("Ataque", true); 
+        animator.SetBool("Ataque", true);
         yield return new WaitForSeconds(.0f) ;
         animator.SetBool("Ataque", false);
        
