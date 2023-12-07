@@ -45,5 +45,10 @@ public class ReflectableBullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if(gameObject.tag == "Bullet" && (collision.gameObject.tag == "Boss" || collision.gameObject.tag == "StaticProjectileEnemy"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

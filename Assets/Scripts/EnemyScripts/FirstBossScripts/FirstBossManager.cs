@@ -15,7 +15,7 @@ public class FirstBossManager : MonoBehaviour
 
     private void Update()
     {
-        if (firstBossHealthTemp <= 0 && firstBossCurrentPhase <= 2)
+        if (firstBossHealthTemp <= 0 && firstBossCurrentPhase <= 1)
         {
             Instantiate(firstBossPhases[firstBossCurrentPhase + 1]);
             firstBossHealthTemp = firstBossHealth;

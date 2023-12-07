@@ -13,6 +13,7 @@ TagManager:
   - EnemyAir
   - Platform
   - Obstacle
+  - StaticProjectileEnemy
   layers:
   - Default
   - TransparentFX
