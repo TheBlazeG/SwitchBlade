@@ -5,8 +5,8 @@ using UnityEngine;
 public class FirstBossShoot : MonoBehaviour
 {
     [SerializeField] List<GameObject> bulletType;
-    [SerializeField] float firstBossShootTime;
-    [SerializeField] int currentPhase;
+    [SerializeField] private float firstBossShootTime;
+    [SerializeField] private int currentPhase;
     FirstBossScript firstBossScript;
     FirstBossManager bossManager;
     private int bulletTypeIndex = 0;

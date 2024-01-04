@@ -5,7 +5,7 @@ using UnityEngine;
 public class FirstBossManager : MonoBehaviour
 {
     [SerializeField] int firstBossHealth;
-    [SerializeField] GameObject[] firstBossPhases;
+    [SerializeField] private List<GameObject> firstBossPhases;
     public int firstBossCurrentPhase = 0, firstBossHealthTemp;
 
     private void Start()
