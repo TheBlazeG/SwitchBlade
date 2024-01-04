@@ -8,6 +8,7 @@ public class DisparoJugador : MonoBehaviour
     public float cooldown;
     public GameObject Flecha;
     public float timelife;
+    public AudioSource shootAudioSource;
 
     private bool canShoot = true;
 
@@ -25,6 +26,7 @@ public class DisparoJugador : MonoBehaviour
     private void Disparo()
     {
         Instantiate(Flecha, constroladorbala.position, constroladorbala.rotation);
+        shootAudioSource.Play();
     }
 
     IEnumerator CooldownCoroutine(float _time)

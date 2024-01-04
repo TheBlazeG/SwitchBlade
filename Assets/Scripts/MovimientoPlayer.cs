@@ -49,9 +49,10 @@ public class MovimientoPlayer : MonoBehaviour
     public float multiplicadorVelocidadAgachado;
     public Collider2D colisionadorAgachado;
     private bool estabaAgachado = false;
-    private bool agachar = false;    
+    private bool agachar = false;
 
     [Header("Attack")]
+    public AudioSource swordAudioSource;
     private bool Attack = false;
 
     [Header("Life")]
@@ -86,7 +87,9 @@ public class MovimientoPlayer : MonoBehaviour
 
         if(Input.GetButtonDown("Fire1"))
         {
-            animator.Play("Attack");
+            Debug.Log("pp");
+            swordAudioSource.Play();
+            StartCoroutine(attack());
         }
 
         if (enSuelo)
@@ -247,5 +250,12 @@ public class MovimientoPlayer : MonoBehaviour
     public void Murision()
     {
         gameObject.SetActive(false);
+    }
+    IEnumerator attack()
+    {
+        animator.SetBool("Ataque", true);
+        yield return new WaitForSeconds(.0f) ;
+        animator.SetBool("Ataque", false);
+       
     }
 }

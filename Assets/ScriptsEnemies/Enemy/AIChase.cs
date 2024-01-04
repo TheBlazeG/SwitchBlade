@@ -13,7 +13,6 @@ public class AIChase : MonoBehaviour
     Rigidbody2D rb;
     Vector3 localScale;
     float dirX;
-    bool facingLeft = true;
 
     private void Start()
     {
@@ -25,10 +24,9 @@ public class AIChase : MonoBehaviour
     void Update()
     {
         distance = Vector2.Distance(transform.position, home.transform.position);
-        distancePlayer = Vector2.Distance(home.transform.position, player.transform.position);
+        distancePlayer = Vector2.Distance(player.transform.position, home.transform.position);
         Vector2 directionPlayer = player.transform.position - transform.position;
         directionPlayer.Normalize();
-        float angle = Mathf.Atan2(0, directionPlayer.x) * Mathf.Rad2Deg;
 
 
         if (distance < range && distancePlayer < range)
@@ -53,12 +51,10 @@ public class AIChase : MonoBehaviour
 
         if ((dirX - player.transform.position.x < 0 && distancePlayer < range) || (distancePlayer > range && dirX < home.transform.position.x))
         {
-            facingLeft = false;
             localScale.x = 1;
         }
         else
         {
-            facingLeft = true;
             localScale.x = -1;
         }
         transform.localScale = localScale;
@@ -70,7 +66,7 @@ public class AIChase : MonoBehaviour
         {
 
             case "Obstacle":
-                rb.AddForce(Vector2.up * 500f);
+                rb.AddForce(Vector2.up * 350f);
                 //print("obstaculo");
                 break;
 
