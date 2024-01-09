@@ -52,8 +52,7 @@ public class MovimientoPlayer : MonoBehaviour
     private bool agachar = false;
 
     [Header("Attack")]
-    public AudioSource swordAudioSource;
-    private bool Attack = false;
+    public AudioSource swordAudioSource;  
 
     [Header("Life")]
     public float life;
@@ -90,6 +89,11 @@ public class MovimientoPlayer : MonoBehaviour
             Debug.Log("pp");
             swordAudioSource.Play();
             StartCoroutine(attack());
+        }
+
+        if(Input.GetKey("g"))
+        {
+
         }
 
         if (enSuelo)
@@ -197,14 +201,19 @@ public class MovimientoPlayer : MonoBehaviour
 
     }
 
-    private void Dash()
+    public void Dash()
     {
         saltosExtraRestantes -= 1;
-        animator.Play("Dash");
+        StartCoroutine(dashplayer());
         dash = false;
         RB2D.AddForce(new Vector2(Dashforce, 0f));
 
     }
+
+    public void NDash()
+    {
+        RB2D.AddForce(new Vector2(Dashforce * -1, 200f));
+    }   
 
     private void SaltoPared()
     {
@@ -244,19 +253,27 @@ public class MovimientoPlayer : MonoBehaviour
         life -= Damage;
         if (life <= 0)
         {
-            Murision();
+            Deathplayer();
         }
     }
 
-    public void Murision()
+    public void Deathplayer()
     {
         gameObject.SetActive(false);
     }
+
     IEnumerator attack()
     {
         animator.SetBool("Ataque", true);
-        yield return new WaitForSeconds(.0f) ;
+        yield return new WaitForSeconds(.0f);
         animator.SetBool("Ataque", false);
        
+    }
+
+    IEnumerator dashplayer()
+    {
+        animator.SetBool("Dash", true);
+        yield return new WaitForSeconds(.0f);
+        animator.SetBool("Dash", false);
     }
 }
