@@ -208,6 +208,7 @@ public class MovimientoPlayer : MonoBehaviour
 
     private void SaltoPared()
     {
+        salto = false;
         enPared = false;
         RB2D.AddForce(new Vector2(fuerzaSaltoParedX * -inputX, fuerzaSaltoParedY));
         // Espere
