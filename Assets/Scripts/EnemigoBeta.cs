@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class EnemigoBeta : MonoBehaviour
 {
-    private int vida;
-    public int baselife;
+    private int Life;
+    public int BaseLife;
+    public float Knockbackforce;
+    public Rigidbody2D RB2D;
+    public float Push;
+    public float Up;
 
     private void Start()
     {
-        vida = baselife;
+        Life = BaseLife;
     }
+
     public void Dao(int dao)
     {
-        vida -= dao;
-        if(vida <= 0)
+        Life -= dao;
+        Knockback();
+        if (Life <= 0)
         {
             Muerte();
         }
@@ -23,6 +29,11 @@ public class EnemigoBeta : MonoBehaviour
     public void Muerte()
     {
         gameObject.SetActive(false);
-        vida = baselife;
+        Life = BaseLife;
+    }
+
+    public void Knockback()
+    {   
+        RB2D.AddForce(new Vector2(Knockbackforce * Push, Up));
     }
 }

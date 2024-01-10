@@ -9,6 +9,8 @@ public class DisparoJugador : MonoBehaviour
     public GameObject Flecha;
     public float timelife;
     public AudioSource shootAudioSource;
+    public GameObject Boom;
+
 
     private bool canShoot = true;
 
@@ -21,12 +23,24 @@ public class DisparoJugador : MonoBehaviour
             StartCoroutine(CooldownCoroutine(cooldown));
 
         }
+
+        if(Input.GetKey("g") && canShoot)
+        {
+            //Pollo
+            Bomba();
+            StartCoroutine(CooldownCoroutine(cooldown));
+        }
     }
 
     private void Disparo()
     {
         Instantiate(Flecha, constroladorbala.position, constroladorbala.rotation);
         shootAudioSource.Play();
+    }
+
+    private void Bomba()
+    {
+        Instantiate(Boom, constroladorbala.position, constroladorbala.rotation);
     }
 
     IEnumerator CooldownCoroutine(float _time)
