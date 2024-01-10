@@ -212,6 +212,7 @@ public class MovimientoPlayer : MonoBehaviour
 
     public void NDash()
     {
+        StartCoroutine(dashDamage());
         RB2D.AddForce(new Vector2(Dashforce * -1, 200f));
     }   
 
@@ -253,13 +254,14 @@ public class MovimientoPlayer : MonoBehaviour
         life -= Damage;
         if (life <= 0)
         {
-            Deathplayer();
+            NDash();
+            animator.SetBool("Death", true);
+            StartCoroutine(Muerte());
         }
-    }
-
-    public void Deathplayer()
-    {
-        gameObject.SetActive(false);
+        else
+        {
+            NDash();
+        }
     }
 
     IEnumerator attack()
@@ -276,4 +278,18 @@ public class MovimientoPlayer : MonoBehaviour
         yield return new WaitForSeconds(.0f);
         animator.SetBool("Dash", false);
     }
+
+    IEnumerator dashDamage()
+    {
+        animator.SetBool("Hurt", true);
+        yield return new WaitForSeconds(.4f);
+        animator.SetBool("Hurt", false);
+    }
+
+    IEnumerator Muerte()
+    {
+        yield return new WaitForSeconds(1.5f);
+        gameObject.SetActive (false);
+    }
+
 }
