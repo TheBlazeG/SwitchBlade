@@ -223,9 +223,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 202689394947271982, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 594277628966738506, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
       propertyPath: life
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125080422286704323, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4262148879185620111, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
       propertyPath: m_Name
@@ -233,7 +241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7658732189106092205, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.67
+      value: -13.12
       objectReference: {fileID: 0}
     - target: {fileID: 7658732189106092205, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1059,6 +1067,10 @@ PrefabInstance:
     - target: {fileID: 1538505079145605155, guid: 2a07786a6ebd5734ca5548b306291ca6, type: 3}
       propertyPath: m_Name
       value: Capsule (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602675623558399573, guid: 2a07786a6ebd5734ca5548b306291ca6, type: 3}
+      propertyPath: Damage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6499803792900261870, guid: 2a07786a6ebd5734ca5548b306291ca6, type: 3}
       propertyPath: m_LocalPosition.x
