@@ -535,7 +535,7 @@ MonoBehaviour:
   multiplicadorVelocidadAgachado: 0.3
   colisionadorAgachado: {fileID: 8908010824547197463}
   swordAudioSource: {fileID: 3346378138783521426}
-  life: 25
+  life: 200
 --- !u!58 &8908010824547197463
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -655,6 +655,7 @@ MonoBehaviour:
   timelife: 1
   shootAudioSource: {fileID: 7765774143180709613}
   Boom: {fileID: 580938623726980673, guid: 2a5f022896ba1a742ac6fa7b7b788b8c, type: 3}
+  ChickenBoom: 1
 --- !u!1 &4696730885450365635
 GameObject:
   m_ObjectHideFlags: 0

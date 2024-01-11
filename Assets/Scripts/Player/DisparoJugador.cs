@@ -12,11 +12,19 @@ public class DisparoJugador : MonoBehaviour
     public GameObject Boom;
 
 
-    private bool canShoot = true;
+    private bool CanShoot = true;
+    public bool Chicken;
+    public float ChickenBoom;
+    private float ChickenMore;
+
+    void Start()
+    {
+        ChickenMore = 0;
+    }
 
     private void Update()
     {
-        if(Input.GetButtonDown("Fire2") && canShoot)
+        if (Input.GetButtonDown("Fire2") && CanShoot)
         {
             //Flecha
             Disparo();
@@ -24,10 +32,10 @@ public class DisparoJugador : MonoBehaviour
 
         }
 
-        if(Input.GetKey("g") && canShoot)
+        if (Input.GetKey("g") && CanShoot && ChickenMore > 0)
         {
             //Pollo
-            Bomba();
+            Instantiate(Boom, constroladorbala.position, constroladorbala.rotation);
             StartCoroutine(CooldownCoroutine(cooldown));
         }
     }
@@ -38,16 +46,22 @@ public class DisparoJugador : MonoBehaviour
         shootAudioSource.Play();
     }
 
-    private void Bomba()
+    public void Bomba(float ChickenBoom)
     {
-        Instantiate(Boom, constroladorbala.position, constroladorbala.rotation);
+        ChickenMore =+ ChickenBoom;
     }
 
     IEnumerator CooldownCoroutine(float _time)
     {
-        canShoot = false;
+        CanShoot = false;
         yield return new WaitForSeconds(_time);
-        canShoot = true;
+        CanShoot = true;
     }
     
+    IEnumerator Pollo()
+    {
+        Chicken = false;
+        yield return new WaitForSeconds(2f);
+        Chicken = true;
+    }
 }
