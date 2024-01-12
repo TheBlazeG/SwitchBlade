@@ -5,12 +5,10 @@ using UnityEngine;
 public class PE : MonoBehaviour
 {
     public float velocidad;
-
     public int Explotion;
-
     public float lifetime;
-
     private Animator animator;
+    private bool Run = true;
 
     private void Start()
     {
@@ -18,7 +16,10 @@ public class PE : MonoBehaviour
     }
     private void Update()
     {
-        transform.Translate(Vector2.right * velocidad * Time.deltaTime);
+        if (Run)
+        {
+            transform.Translate(Vector2.right * velocidad * Time.deltaTime);
+        }
         StartCoroutine(LifetimeCoroutine(lifetime));
     }
 
@@ -28,11 +29,11 @@ public class PE : MonoBehaviour
         {
             StartCoroutine(Death());
         }
-
     }
 
     IEnumerator Death()
     {
+        Run = false;
         animator.SetBool("Death", true);
         yield return new WaitForSeconds(.8f);
         Destroy(gameObject);

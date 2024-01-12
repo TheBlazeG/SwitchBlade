@@ -220,6 +220,7 @@ public class MovimientoPlayer : MonoBehaviour
     {
         salto = false;
         enPared = false;
+        RB2D.velocity = new Vector2(0, 0);
         RB2D.AddForce(new Vector2(fuerzaSaltoParedX * -inputX, fuerzaSaltoParedY));
         // Espere
         StartCoroutine(CambioSaltoPared());
