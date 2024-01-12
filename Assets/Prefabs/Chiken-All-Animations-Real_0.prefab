@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4732032852250600122}
   m_Layer: 0
   m_Name: Chiken-All-Animations-Real_0
-  m_TagString: PlayerSword
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -260,7 +260,7 @@ Transform:
   m_GameObject: {fileID: 2186393347330246240}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.322, z: 0}
+  m_LocalPosition: {x: -0.022, y: 0.677, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -298,9 +298,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.40511957}
   serializedVersion: 2
-  m_Radius: 0.97
+  m_Radius: 0.5648807
 --- !u!114 &2415134749098916978
 MonoBehaviour:
   m_ObjectHideFlags: 0
