@@ -10,7 +10,7 @@ public class PlayerUI : MonoBehaviour
     public Image skillImage;
 
     public Color skillImageActiveColor, skillImageDeactiveColor;
-    private bool skillImageState = false;
+    public bool skillImageState = false;
 
     private void Update()
     {
@@ -33,12 +33,12 @@ public class PlayerUI : MonoBehaviour
     public void SetMaxAmmo(float ammo)
     {
         ammoSlider.maxValue = ammo;
-        ammoSlider.value = ammo;
+        ammoSlider.value -= ammo;
     }
 
     public void SetAmmo(float ammo)
     {
-        ammoSlider.value -= ammo;
+        ammoSlider.value += ammo;
     }
 
     //Changes color
