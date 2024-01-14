@@ -7,6 +7,7 @@ public class FirstBossManager : MonoBehaviour
     [SerializeField] int firstBossHealth;
     [SerializeField] private List<GameObject> firstBossPhases;
     public int firstBossCurrentPhase = 0, firstBossHealthTemp;
+    public bool bossDefeated = false;
 
     private void Start()
     {
@@ -21,8 +22,10 @@ public class FirstBossManager : MonoBehaviour
             firstBossHealthTemp = firstBossHealth;
             firstBossCurrentPhase++;
         }
-
-
+        if (firstBossCurrentPhase >= 2)
+        {
+            bossDefeated = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
