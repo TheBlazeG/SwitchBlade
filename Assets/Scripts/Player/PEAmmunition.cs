@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PEAmmunition : MonoBehaviour
 {
-    private float Chicken = 1;
     private Animator animator;
+    private float Carga = 1;
 
     // Update is called once per frame
     private void Update()
@@ -17,14 +17,16 @@ public class PEAmmunition : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            animator.SetTrigger("Hit");
+            GetComponent<BoxCollider2D>().enabled = false;
+            other.GetComponent<MovimientoPlayer>().Bomba(Carga);
             StartCoroutine(IdleChicken());
-            other.GetComponent<DisparoJugador>().Bomba(Chicken);
+            
         }
     }
 
     IEnumerator IdleChicken()
     {
-        animator.SetBool("Hit", true);
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
