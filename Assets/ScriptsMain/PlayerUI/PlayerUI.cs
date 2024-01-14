@@ -33,12 +33,12 @@ public class PlayerUI : MonoBehaviour
     public void SetMaxAmmo(float ammo)
     {
         ammoSlider.maxValue = ammo;
-        ammoSlider.value = ammo;
+        ammoSlider.value -= ammo;
     }
 
     public void SetAmmo(float ammo)
     {
-        ammoSlider.value -= ammo;
+        ammoSlider.value += ammo;
     }
 
     //Changes color
