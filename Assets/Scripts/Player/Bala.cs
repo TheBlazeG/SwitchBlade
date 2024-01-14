@@ -23,6 +23,11 @@ public class Bala : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (other.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     IEnumerator LifetimeCoroutine(float _time)

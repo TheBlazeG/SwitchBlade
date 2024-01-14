@@ -5,8 +5,9 @@ using UnityEngine;
 public class FirstBossManager : MonoBehaviour
 {
     [SerializeField] int firstBossHealth;
-    [SerializeField] GameObject[] firstBossPhases;
+    [SerializeField] private List<GameObject> firstBossPhases;
     public int firstBossCurrentPhase = 0, firstBossHealthTemp;
+    public bool bossDefeated = false;
 
     private void Start()
     {
@@ -15,14 +16,16 @@ public class FirstBossManager : MonoBehaviour
 
     private void Update()
     {
-        if (firstBossHealthTemp <= 0 && firstBossCurrentPhase <= 2)
+        if (firstBossHealthTemp <= 0 && firstBossCurrentPhase <= 1)
         {
             Instantiate(firstBossPhases[firstBossCurrentPhase + 1]);
             firstBossHealthTemp = firstBossHealth;
             firstBossCurrentPhase++;
         }
-
-
+        if (firstBossCurrentPhase >= 2)
+        {
+            bossDefeated = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
