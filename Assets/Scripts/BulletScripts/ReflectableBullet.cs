@@ -39,9 +39,14 @@ public class ReflectableBullet : MonoBehaviour
         if (collision.gameObject.tag == "PlayerSword")
         {
             gameObject.tag = "Bullet";
-            reflectableBulletOrientation = -1;
+            reflectableBulletOrientation = -3;
         }
         if (collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+
+        if(gameObject.tag == "Bullet" && (collision.gameObject.tag == "Boss" || collision.gameObject.tag == "StaticProjectileEnemy"))
         {
             Destroy(gameObject);
         }

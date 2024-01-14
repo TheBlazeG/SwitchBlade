@@ -5,11 +5,10 @@ using UnityEngine;
 public class FirstBossScript : MonoBehaviour
 {
     [SerializeField] public int firstBossFollowersLeft, firstBossHealth; 
-    [SerializeField] float firstBossFirstPhaceShootTime, appearFollowersTime;
-    [SerializeField] GameObject reflectableBullet;
-    [SerializeField] GameObject[] followers;
-    float firstBossFirstPhaceShootTimeTemp = 0;
-    FirstBossManager bossManager;
+    [SerializeField] private float appearFollowersTime;
+    [SerializeField] private GameObject[] followers;
+    private FirstBossManager bossManager;
+    public bool firstBossAttacking = false;
 
     private void Start()
     {
@@ -25,18 +24,12 @@ public class FirstBossScript : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (firstBossFollowersLeft <= 0 && firstBossFirstPhaceShootTimeTemp <= 0) 
+        if (firstBossFollowersLeft <= 0) 
         {
-            ShootReflectableBulletBoss();
-            firstBossFirstPhaceShootTimeTemp = firstBossFirstPhaceShootTime;
+            firstBossAttacking = true;
         }
-        firstBossFirstPhaceShootTimeTemp -= Time.deltaTime;
     }
 
-    void ShootReflectableBulletBoss()
-    {
-        Instantiate(reflectableBullet, transform.position, Quaternion.identity);
-    }
 
     void AppearFollowers()
     {

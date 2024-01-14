@@ -11,8 +11,14 @@ public class FallingSpikeSpawner : MonoBehaviour
         InvokeRepeating("SpawnFallingSpike", fallingSpikeFirstSpawnTime, fallingSpikeSpawnTime);
     }
 
+    private void Update()
+    {
+        
+    }
+
     void SpawnFallingSpike()
     {
         Instantiate(FallingSpike, transform.position, transform.rotation);
     }
+
 }
