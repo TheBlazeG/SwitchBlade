@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1230975007090983099}
   - component: {fileID: 5735344103700416209}
   - component: {fileID: 4247437555754907977}
+  - component: {fileID: 960757547870808514}
   m_Layer: 0
   m_Name: FirstBossPhase2
   m_TagString: Boss
@@ -173,11 +174,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstBossFollowersLeft: 4
   firstBossHealth: 3
-  firstBossFirstPhaceShootTime: 3
   appearFollowersTime: 8
-  reflectableBullet: {fileID: 9101786515398737763, guid: 7119b5243991ee34ea4a225a54c4a9a9, type: 3}
   followers:
   - {fileID: 7795829835361300751, guid: b496387296acea24191ffd0eb20bf96f, type: 3}
   - {fileID: 7372281809428981841, guid: 043bb36306bca7a438565af0be0a0cdd, type: 3}
   - {fileID: 2274639952314352140, guid: 319e3e8b8ec7d8d43b89e7e07e4275d7, type: 3}
   - {fileID: 7004240780390101847, guid: 959cae890e4a69c47b0a158d5cf0b74a, type: 3}
+  firstBossAttacking: 0
+--- !u!114 &960757547870808514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5049374375285075426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a9fa05ed01a0047b8f725191658696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletType:
+  - {fileID: 7957053713505198765, guid: fa10a0d33d6036342911135d3ced9f97, type: 3}
+  - {fileID: 9101786515398737763, guid: 7119b5243991ee34ea4a225a54c4a9a9, type: 3}
+  firstBossShootTime: 2.5
+  currentPhase: 2

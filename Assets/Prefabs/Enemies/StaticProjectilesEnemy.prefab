@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7471520379304625559}
   m_Layer: 0
   m_Name: StaticProjectilesEnemy
-  m_TagString: Untagged
+  m_TagString: StaticProjectileEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,3 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reflectableBullets: {fileID: 9101786515398737763, guid: 7119b5243991ee34ea4a225a54c4a9a9, type: 3}
+  bulletHitsLeft: 0
+  staticEnemyShootTime: 0
+  staticEnemyFirstShootTime: 0

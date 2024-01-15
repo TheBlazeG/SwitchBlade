@@ -13,6 +13,9 @@ TagManager:
   - EnemyAir
   - Platform
   - Obstacle
+  - StaticProjectileEnemy
+  - impactWallX
+  - impactWallY
   layers:
   - Default
   - TransparentFX
@@ -21,8 +24,8 @@ TagManager:
   - Water
   - UI
   - Techo
-  - 
-  - 
+  - Ser Vivo
+  - EnemigoIgnorable
   - 
   - 
   - 

@@ -7,9 +7,12 @@ public class WallBullet : MonoBehaviour
     [SerializeField] float wallBulletSpeed;
     private Rigidbody2D wallBulletRigidbody2d;
     private float timer = 15;
+    MovimientoPlayer movimientoPlayer;
+
     void Start()
     {
         wallBulletRigidbody2d = GetComponent<Rigidbody2D>();
+        movimientoPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<MovimientoPlayer>();
     }
 
     private void Update()
@@ -24,5 +27,14 @@ public class WallBullet : MonoBehaviour
     void FixedUpdate()
     {
         wallBulletRigidbody2d.velocity = Vector2.right * wallBulletSpeed * Time.deltaTime;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            movimientoPlayer.PlayerLife(1);
+            Destroy(gameObject);
+        }
     }
 }
