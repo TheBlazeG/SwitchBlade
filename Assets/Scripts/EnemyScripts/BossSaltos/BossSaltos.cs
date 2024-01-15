@@ -14,10 +14,12 @@ public class BossSaltos : MonoBehaviour
     private int phase = 0, jumpsLeft = 0, thrustOrientationX = 1, thrustOrientationY = -1, enemySpawnIndex = 0;
     private float walkingTimeTimer = 0, bombsCadenceTimer = 0, enemySpawnTimerFake = 0;
     private Rigidbody2D rbBossSaltos;
+    MovimientoPlayer movimientoPlayer;
 
     private void Start()
     {
         rbBossSaltos = GetComponent<Rigidbody2D>();
+        movimientoPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<MovimientoPlayer>();
 
         walkingTimeTimer = walkingTime[phase];
     }
@@ -25,7 +27,6 @@ public class BossSaltos : MonoBehaviour
     private void Update()
     {
         //debug zone
-        Debug.Log(enemySpawnIndex);
 
         if (health > 100)
         {
@@ -125,6 +126,7 @@ public class BossSaltos : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             thrustOrientationX *= -1;
+            movimientoPlayer.PlayerLife(1);
         }
     }
 }

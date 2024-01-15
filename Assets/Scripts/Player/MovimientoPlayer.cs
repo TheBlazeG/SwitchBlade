@@ -55,6 +55,7 @@ public class MovimientoPlayer : MonoBehaviour
     public float MaxLife = 0;
     public float life = 0;
     private bool DeathPlayer;
+    
 
     [Header("DisparoJugador")]
     public Transform constroladorbala;
@@ -89,7 +90,6 @@ public class MovimientoPlayer : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(queEsSuelo);
 
         inputX = Input.GetAxisRaw("Horizontal");
         movimientoHorizontal = inputX * velocidadDeMovimiento;
