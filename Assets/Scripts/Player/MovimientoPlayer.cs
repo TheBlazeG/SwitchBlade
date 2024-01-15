@@ -65,6 +65,8 @@ public class MovimientoPlayer : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(queEsSuelo);
+
         inputX = Input.GetAxisRaw("Horizontal");
         movimientoHorizontal = inputX * velocidadDeMovimiento;
         animator.SetFloat("Horizontal", Mathf.Abs(movimientoHorizontal));
