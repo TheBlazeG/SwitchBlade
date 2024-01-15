@@ -112,7 +112,6 @@ public class MovimientoPlayer : MonoBehaviour
             
             if(Input.GetButtonDown("Fire1"))
             {
-                Debug.Log("pp");
                 swordAudioSource.Play();
                 StartCoroutine(attack());               
             }
@@ -245,7 +244,6 @@ public class MovimientoPlayer : MonoBehaviour
         StartCoroutine(dashplayer());
         dash = false;
         RB2D.AddForce(new Vector2(Dashforce, 0f));
-
     }
 
     public void NDash()
