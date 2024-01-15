@@ -95,6 +95,7 @@ public class MovimientoPlayer : MonoBehaviour
         if (enSuelo)
         {
             saltosExtraRestantes = saltosExtra;
+            Debug.Log(enSuelo);
         }
 
         if (!enSuelo && enPared && inputX != 0)
