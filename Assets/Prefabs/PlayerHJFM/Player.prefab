@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 8908010824547197463}
   - component: {fileID: 5906188795366503330}
   - component: {fileID: 3216790233858477206}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -536,7 +536,7 @@ MonoBehaviour:
   MaxLife: 100
   life: 0
   constroladorbala: {fileID: 3469944278947778193}
-  cooldown: 3
+  cooldown: 0.5
   Flecha: {fileID: 7371183832549715515, guid: 2dce39cecb83de744a1e324f21213418, type: 3}
   timelife: 2
   Boom: {fileID: 580938623726980673, guid: 2a5f022896ba1a742ac6fa7b7b788b8c, type: 3}
@@ -636,7 +636,7 @@ Animator:
   m_GameObject: {fileID: 4262148879185620111}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 312496b25d842af4a938e96c7d5aaee0, type: 2}
+  m_Controller: {fileID: 9100000, guid: cf17deb62635f404a81e2679fadd08d7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -687,7 +687,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4001049355861825512}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: ControladorPared
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -718,7 +718,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5573148422561384770}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: ControladorTecho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -749,7 +749,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8823695963352254261}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: ControladorSuelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
