@@ -3487,6 +3487,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 594277628966738506, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
+      propertyPath: playerUI
+      value: 
+      objectReference: {fileID: 926505703}
+    - target: {fileID: 594277628966738506, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
+      propertyPath: currentCheckpoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3346378138783521426, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -7093,6 +7101,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6597257779575760782, guid: a7f906457964db04ababba596599f701, type: 3}
   m_PrefabInstance: {fileID: 910910179}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &926505703 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2298747194264523123, guid: 858b36614fdac5142b6fef349ccda50e, type: 3}
+  m_PrefabInstance: {fileID: 14198992}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efa997955176654c81ec4f0f75f69b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &927273976
 GameObject:
   m_ObjectHideFlags: 0
