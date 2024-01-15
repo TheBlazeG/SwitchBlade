@@ -6,11 +6,11 @@ public class Kbeta : MonoBehaviour
 {
     public float Damage;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            other.GetComponent<MovimientoPlayer>().PlayerLife(Damage);
+            collision.GetComponent<MovimientoPlayer>().PlayerLife(Damage);
         }
     }
 }

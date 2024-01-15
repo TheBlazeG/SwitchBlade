@@ -51,16 +51,40 @@ public class MovimientoPlayer : MonoBehaviour
     private bool estabaAgachado = false;
     private bool agachar = false;
 
-    [Header("Attack")]
-    public AudioSource swordAudioSource;  
-
     [Header("Life")]
-    public float life;
+    public float MaxLife = 0;
+    public float life = 0;
+    private bool DeathPlayer;
+
+    [Header("DisparoJugador")]
+    public Transform constroladorbala;
+    public float cooldown;
+    public GameObject Flecha;
+    public float timelife;
+    
+    public GameObject Boom;
+    public float limitChicken = 5;
+    private bool CanShoot = true;
+    public bool Chicken;
+    public float ChickenMore;
+
+    [Header("PlayerUI")]
+    public PlayerUI playerUI;
+
+    [Header("Attack and Shoot")]
+    public AudioSource swordAudioSource;  
+    public AudioSource shootAudioSource;
+    
 
     private void Start()
     {
         RB2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        DeathPlayer = false;
+        ChickenMore = 0;
+        life = MaxLife;
+        playerUI.SetMaxHealth(MaxLife);
+        playerUI.SetMaxAmmo(limitChicken);
     }
 
     private void Update()
@@ -73,7 +97,6 @@ public class MovimientoPlayer : MonoBehaviour
         input.y = Input.GetAxisRaw("Vertical");
 
         animator.SetBool("enPared", deslizando);
-        
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -86,16 +109,28 @@ public class MovimientoPlayer : MonoBehaviour
             Dash();
         }
 
-        if(Input.GetButtonDown("Fire1"))
+        if(!agachar)
         {
-            Debug.Log("pp");
-            swordAudioSource.Play();
-            StartCoroutine(attack());
-        }
+            
+            if(Input.GetButtonDown("Fire1"))
+            {
+                swordAudioSource.Play();
+                StartCoroutine(attack());               
+            }
+            
+            if (Input.GetButtonDown("Fire2") && CanShoot)
+            {
+                StartCoroutine(Bullet());
+                StartCoroutine(CooldownCoroutine(cooldown));
+            }
 
-        if(Input.GetKey("g"))
-        {
-
+            if(Input.GetKey("g") && CanShoot && ChickenMore > 0)
+            {
+                StartCoroutine(PETime());
+                ChickenMore -= 1;
+                playerUI.SetAmmo(-1);
+                StartCoroutine(CooldownCoroutine(cooldown));
+            }
         }
 
         if (enSuelo)
@@ -119,12 +154,14 @@ public class MovimientoPlayer : MonoBehaviour
         enSuelo = Physics2D.OverlapBox(controladorSuelo.position, dimensionesCaja, 0f, queEsSuelo);
         animator.SetBool("enSuelo", enSuelo);
         animator.SetBool("Agachar", estabaAgachado);
-        
+
         enPared = Physics2D.OverlapBox(controladorPared.position, dimensionesCajaPared, 0f, queEsSuelo);
 
-        Mover(movimientoHorizontal * Time.fixedDeltaTime, salto, agachar);
-
-
+        if (!DeathPlayer)
+        {
+            Mover(movimientoHorizontal * Time.fixedDeltaTime, salto, agachar);
+        }
+       
         if(deslizando)
         {
             RB2D.velocity = new Vector2(RB2D.velocity.x, Mathf.Clamp(RB2D.velocity.y, -velocidadDeslizar, float.MaxValue));
@@ -185,7 +222,7 @@ public class MovimientoPlayer : MonoBehaviour
             Girar();
         }
 
-        if (enSuelo && salto && !deslizando)
+        if (enSuelo && salto && !deslizando && !agachar)
         {
             Salto();
         }
@@ -209,7 +246,6 @@ public class MovimientoPlayer : MonoBehaviour
         StartCoroutine(dashplayer());
         dash = false;
         RB2D.AddForce(new Vector2(Dashforce, 0f));
-
     }
 
     public void NDash()
@@ -255,15 +291,31 @@ public class MovimientoPlayer : MonoBehaviour
     public void PlayerLife(float Damage)
     {
         life -= Damage;
+        playerUI.SetHealth(Damage);
         if (life <= 0)
         {
             NDash();
-            animator.SetBool("Death", true);
+            DeathPlayer = true;
+            animator.SetBool("Death", true); 
             StartCoroutine(Muerte());
         }
         else
         {
             NDash();
+        }
+    }
+
+    public void PlayerCures(float Health)
+    {
+        if ((life + Health) > MaxLife)
+        {
+            life = MaxLife;
+            playerUI.SetHealth(-MaxLife);
+        } 
+        else 
+        {
+            life += Health;
+            playerUI.SetHealth(-Health);
         }
     }
 
@@ -295,4 +347,51 @@ public class MovimientoPlayer : MonoBehaviour
         gameObject.SetActive (false);
     }
 
+    public IEnumerator Bullet()
+    {
+        animator.SetBool("Bullet", true);
+        yield return new WaitForSeconds(.0f);
+        Disparo();
+        animator.SetBool("Bullet", false);
+
+    }
+    
+    public IEnumerator PETime()
+    {
+        animator.SetBool("PE", true);
+        yield return new WaitForSeconds(.0f);
+        BoomChicken();
+        animator.SetBool("PE", false);
+    }
+
+    private void Disparo()
+    {
+        Instantiate(Flecha, constroladorbala.position, constroladorbala.rotation);
+        shootAudioSource.Play();
+    }
+
+    public void Bomba(float MunChicken)
+    {
+        ChickenMore += MunChicken;
+        playerUI.SetAmmo(MunChicken);
+    }
+
+    public void BoomChicken()
+    {
+        Instantiate(Boom, constroladorbala.position, constroladorbala.rotation);
+    }
+
+    IEnumerator CooldownCoroutine(float _time)
+    {
+        CanShoot = false;
+        yield return new WaitForSeconds(_time);
+        CanShoot = true;
+    }
+    
+    IEnumerator Pollo()
+    {
+        Chicken = false;
+        yield return new WaitForSeconds(2f);
+        Chicken = true;
+    }
 }

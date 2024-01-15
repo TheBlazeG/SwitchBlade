@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1045785635662975797
 Transform:
   m_ObjectHideFlags: 0
@@ -262,7 +262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4742046999668067494
 Transform:
   m_ObjectHideFlags: 0
@@ -290,7 +290,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0e8789aa3de7488468bcb4de39c38de2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.091
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -389,7 +389,6 @@ GameObject:
   - component: {fileID: 8908010824547197463}
   - component: {fileID: 5906188795366503330}
   - component: {fileID: 3216790233858477206}
-  - component: {fileID: 4913743183275340268}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -534,8 +533,19 @@ MonoBehaviour:
   radioTecho: 0.8
   multiplicadorVelocidadAgachado: 0.3
   colisionadorAgachado: {fileID: 8908010824547197463}
+  MaxLife: 100
+  life: 0
+  constroladorbala: {fileID: 3469944278947778193}
+  cooldown: 3
+  Flecha: {fileID: 7371183832549715515, guid: 2dce39cecb83de744a1e324f21213418, type: 3}
+  timelife: 2
+  Boom: {fileID: 580938623726980673, guid: 2a5f022896ba1a742ac6fa7b7b788b8c, type: 3}
+  limitChicken: 5
+  Chicken: 0
+  ChickenMore: 0
+  playerUI: {fileID: 0}
   swordAudioSource: {fileID: 3346378138783521426}
-  life: 200
+  shootAudioSource: {fileID: 7765774143180709613}
 --- !u!58 &8908010824547197463
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -637,25 +647,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4913743183275340268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4262148879185620111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8041d946e35a661459e7fa0471785ed9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  constroladorbala: {fileID: 3469944278947778193}
-  cooldown: 3
-  Flecha: {fileID: 7371183832549715515, guid: 2dce39cecb83de744a1e324f21213418, type: 3}
-  timelife: 1
-  shootAudioSource: {fileID: 7765774143180709613}
-  Boom: {fileID: 580938623726980673, guid: 2a5f022896ba1a742ac6fa7b7b788b8c, type: 3}
-  ChickenBoom: 1
 --- !u!1 &4696730885450365635
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +672,7 @@ Transform:
   m_GameObject: {fileID: 4696730885450365635}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.118, y: -0.064, z: 0}
+  m_LocalPosition: {x: 0.105, y: -0.006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
