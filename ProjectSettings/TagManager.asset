@@ -16,6 +16,7 @@ TagManager:
   - StaticProjectileEnemy
   - impactWallX
   - impactWallY
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

@@ -607,8 +607,10 @@ MonoBehaviour:
   - {fileID: 1474754917}
   bombs: {fileID: 4748405130497354751, guid: abc8854c3b4677c4f8e91c8df8923253, type: 3}
   enemies: {fileID: 756696521641821337, guid: 1b2347c8c9908fc42afbbc5d3e79b18e, type: 3}
-  health: 80
+  granade: {fileID: 7957053713505198765, guid: 5c5de6b4daeebd44abe6d4c3f83c6f06, type: 3}
+  health: 15
   enemySpawnTimer: 2
+  granadeCadence: 2
 --- !u!50 &788650699
 Rigidbody2D:
   serializedVersion: 4
@@ -624,7 +626,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.5
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1285,12 +1287,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 594277628966738506, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
+      propertyPath: cooldown
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 594277628966738506, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
       propertyPath: playerUI
       value: 
       objectReference: {fileID: 1271286247}
+    - target: {fileID: 2604089102084580146, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
+      propertyPath: Fuerza
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4262148879185620111, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421697510461252564, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7658732189106092205, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
       propertyPath: m_LocalPosition.x

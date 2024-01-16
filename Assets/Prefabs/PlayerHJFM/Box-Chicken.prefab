@@ -165,3 +165,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdefbdeba340dd24289628e00f177be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TakeChicken: {fileID: 8300000, guid: 32b30f77b323e3e43a9b29df79c36903, type: 3}

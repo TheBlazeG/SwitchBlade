@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5735344103700416209}
   - component: {fileID: 4247437555754907977}
   - component: {fileID: 960757547870808514}
+  - component: {fileID: -1174045282938229326}
   m_Layer: 0
   m_Name: FirstBossPhase2
   m_TagString: Boss
@@ -33,7 +34,8 @@ Transform:
   m_LocalPosition: {x: -20.52, y: -5.6, z: 0}
   m_LocalScale: {x: 5.5242043, y: 8.039639, z: 1.4685}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7647402560024957771}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6478600159519247126
@@ -196,5 +198,59 @@ MonoBehaviour:
   bulletType:
   - {fileID: 7957053713505198765, guid: fa10a0d33d6036342911135d3ced9f97, type: 3}
   - {fileID: 9101786515398737763, guid: 7119b5243991ee34ea4a225a54c4a9a9, type: 3}
+  bulletSpawnPlace: {fileID: 5210382964244716105}
   firstBossShootTime: 2.5
   currentPhase: 2
+  shootAnimationTimer: 0
+--- !u!95 &-1174045282938229326
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5049374375285075426}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: daf349403cfdb974e9fb041e7929d645, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &5210382964244716105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7647402560024957771}
+  m_Layer: 0
+  m_Name: bulletSpawnPlace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7647402560024957771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5210382964244716105}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.07907332, y: 0.21170045, z: -0.018374022}
+  m_LocalScale: {x: 0.18102154, y: 0.12438368, z: 0.680967}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3878365429923054518}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

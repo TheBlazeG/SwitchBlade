@@ -9,13 +9,18 @@ public class PE : MonoBehaviour
     public float lifetime;
     private Animator animator;
     private bool Run = true;
+    public AudioSource Chicken;
+    public AudioClip ChickenFly;
+    public AudioClip ChickenDeathBoom;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        Chicken.PlayOneShot(ChickenFly);
     }
+
     private void Update()
-    {
+    {   
         if (Run)
         {
             transform.Translate(Vector2.right * velocidad * Time.deltaTime);
@@ -27,21 +32,29 @@ public class PE : MonoBehaviour
     {
         if (other.CompareTag("EnemigoBeta"))
         {
-            StartCoroutine(Death());
+            StarDeathAnimation();
         }
     }
 
-    IEnumerator Death()
+    public void ExplotionSound()
+    {
+       Chicken.PlayOneShot(ChickenDeathBoom);
+    }
+
+    public void Death()
+    {
+        Destroy(gameObject);
+    }
+
+    public void StarDeathAnimation()
     {
         Run = false;
         animator.SetBool("Death", true);
-        yield return new WaitForSeconds(.8f);
-        Destroy(gameObject);
     }
 
     IEnumerator LifetimeCoroutine(float _time)
     {
         yield return new WaitForSeconds(_time);
-        StartCoroutine(Death());
+        StarDeathAnimation();
     }
 }

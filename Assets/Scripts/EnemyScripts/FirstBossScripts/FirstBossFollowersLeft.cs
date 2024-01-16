@@ -8,12 +8,14 @@ public class FirstBossFollowersLeft : MonoBehaviour
     [SerializeField] int bulletHitsLeft;
     [SerializeField] float staticEnemyShootTime, staticEnemyFirstShootTime;
     FirstBossScript boss;
+    MovimientoPlayer movimientoPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("ShootReflectableBulletToPlayer", staticEnemyFirstShootTime, staticEnemyShootTime);
         boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<FirstBossScript>();
+        movimientoPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<MovimientoPlayer>();
     }
 
     private void Update()
@@ -35,6 +37,11 @@ public class FirstBossFollowersLeft : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             bulletHitsLeft--;
+        }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            movimientoPlayer.PlayerLife(1);
         }
     }
 }
