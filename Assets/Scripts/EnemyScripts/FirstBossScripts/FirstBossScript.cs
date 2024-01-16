@@ -9,6 +9,7 @@ public class FirstBossScript : MonoBehaviour
     [SerializeField] private GameObject[] followers;
     private FirstBossManager bossManager;
     public bool firstBossAttacking = false;
+    
 
     private void Start()
     {

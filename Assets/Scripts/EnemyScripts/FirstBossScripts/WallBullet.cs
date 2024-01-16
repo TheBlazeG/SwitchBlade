@@ -8,9 +8,12 @@ public class WallBullet : MonoBehaviour
     private Rigidbody2D wallBulletRigidbody2d;
     private float timer = 15;
     MovimientoPlayer movimientoPlayer;
+    Animator animator;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
+        animator.SetBool("Run", true);
         wallBulletRigidbody2d = GetComponent<Rigidbody2D>();
         movimientoPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<MovimientoPlayer>();
     }
