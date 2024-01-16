@@ -29,9 +29,6 @@ public class FirstBossShoot : MonoBehaviour
     void Update()
     {
         firstBossShootTimeTemp -= Time.deltaTime;
-        
-
-        Debug.Log(shootAnimationTimerFake);
 
         if (firstBossScript.firstBossAttacking && firstBossShootTimeTemp <= 0)
         {
