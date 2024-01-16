@@ -535,6 +535,7 @@ MonoBehaviour:
   colisionadorAgachado: {fileID: 8908010824547197463}
   MaxLife: 100
   life: 0
+  currentCheckpoint: {fileID: 0}
   constroladorbala: {fileID: 3469944278947778193}
   cooldown: 0.5
   Flecha: {fileID: 7371183832549715515, guid: 2dce39cecb83de744a1e324f21213418, type: 3}
