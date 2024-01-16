@@ -90,7 +90,6 @@ public class MovimientoPlayer : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(currentCheckpoint);
 
         inputX = Input.GetAxisRaw("Horizontal");
         movimientoHorizontal = inputX * velocidadDeMovimiento;
