@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1921687147899435885}
   - component: {fileID: 235599762819633586}
   - component: {fileID: -1958473073452698734}
+  - component: {fileID: 1297006399655751130}
   m_Layer: 0
   m_Name: FirstBossPhase3
   m_TagString: Boss
@@ -196,5 +197,28 @@ MonoBehaviour:
   bulletType:
   - {fileID: 7957053713505198765, guid: fa10a0d33d6036342911135d3ced9f97, type: 3}
   - {fileID: 9101786515398737763, guid: 7119b5243991ee34ea4a225a54c4a9a9, type: 3}
+  bulletSpawnPlace: {fileID: 0}
   firstBossShootTime: 2
   currentPhase: 3
+  shootAnimationTimer: 0
+--- !u!95 &1297006399655751130
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3510168731676103139}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: daf349403cfdb974e9fb041e7929d645, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
