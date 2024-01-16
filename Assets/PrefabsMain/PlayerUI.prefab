@@ -182,6 +182,7 @@ MonoBehaviour:
   skillImage: {fileID: 8871723916673071279}
   skillImageActiveColor: {r: 1, g: 1, b: 1, a: 1}
   skillImageDeactiveColor: {r: 0, g: 0, b: 0, a: 1}
+  skillImageState: 0
 --- !u!1 &3503519437438454480
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,12 +49,13 @@ public class PE : MonoBehaviour
     public void StarDeathAnimation()
     {
         Run = false;
-        animator.SetBool("Death", true);
+        animator.SetBool("Death", true);    
     }
 
     IEnumerator LifetimeCoroutine(float _time)
     {
         yield return new WaitForSeconds(_time);
         StarDeathAnimation();
+   
     }
 }
