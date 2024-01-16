@@ -5,18 +5,24 @@ using UnityEngine;
 public class FirstBossShoot : MonoBehaviour
 {
     [SerializeField] List<GameObject> bulletType;
+    [SerializeField] GameObject bulletSpawnPlace;
     [SerializeField] private float firstBossShootTime;
     [SerializeField] private int currentPhase;
+    [SerializeField] private float shootAnimationTimer;
     FirstBossScript firstBossScript;
     FirstBossManager bossManager;
     private int bulletTypeIndex = 0;
-    private float firstBossShootTimeTemp = 0;
-    
+    private float firstBossShootTimeTemp = 0, shootAnimationTimerFake = 0;
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         firstBossScript = GetComponent<FirstBossScript>();
         bossManager = GameObject.FindGameObjectWithTag("BossManager").GetComponent<FirstBossManager>();
+        animator = GetComponent<Animator>();
+
+        shootAnimationTimerFake = shootAnimationTimer;
     }
 
     // Update is called once per frame
@@ -26,15 +32,20 @@ public class FirstBossShoot : MonoBehaviour
 
         if (firstBossScript.firstBossAttacking && firstBossShootTimeTemp <= 0)
         {
-            Shoot();
-            firstBossShootTimeTemp = firstBossShootTime;
+            animator.SetBool("shooting", true);
+            shootAnimationTimerFake -= Time.deltaTime;
+            if (shootAnimationTimerFake <= 0) 
+            {
+                Shoot();
+            }
+            
         }
     }
 
     void Shoot()
     {
-        Instantiate(bulletType[bulletTypeIndex], transform.position, Quaternion.identity);
-        if (currentPhase > 1) 
+        Instantiate(bulletType[bulletTypeIndex], bulletSpawnPlace.transform.position, Quaternion.identity);
+        if (currentPhase > 1)
         {
             if (bulletTypeIndex == 0)
             {
@@ -44,7 +55,13 @@ public class FirstBossShoot : MonoBehaviour
             {
                 bulletTypeIndex = 0;
             }
+            animator.SetBool("shooting", false);
+            shootAnimationTimerFake = shootAnimationTimer;
         }
+        animator.SetBool("shooting", false);
+        shootAnimationTimerFake = shootAnimationTimer;
+        firstBossShootTimeTemp = firstBossShootTime;
     }
-
 }
+
+

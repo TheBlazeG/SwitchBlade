@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1725747143962656489}
   - component: {fileID: 1475189037402906430}
   - component: {fileID: -4462698488337964834}
+  - component: {fileID: 2544586107669681519}
   m_Layer: 0
   m_Name: ReflectableBullet
   m_TagString: Untagged
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.84751457, b: 0, a: 1}
+  m_Sprite: {fileID: -169752341, guid: b693ba1ca17fb2949b68215e6d28e423, type: 3}
+  m_Color: {r: 0, g: 1, b: 0.11066723, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -147,7 +148,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &-4462698488337964834
 MonoBehaviour:
@@ -161,4 +162,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b913324655f5b4a93e31e08e378679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reflectableBulletSpeed: 500
+  reflectableBulletSpeed: 700
+--- !u!95 &2544586107669681519
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9101786515398737763}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f6d1036be8ab25459b7817089ab94a9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

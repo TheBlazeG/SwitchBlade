@@ -5,16 +5,21 @@ using UnityEngine;
 public class BossSaltos : MonoBehaviour
 {
     [SerializeField] private List<float> bossSaltosSpeed, walkingTime, walkingSpeed, bombsCadence;
-    [SerializeField] private GameObject bombs;
+    [SerializeField] private List<int> jumpsPhase;
+    [SerializeField] private List<GameObject> enemySpawn;
+    [SerializeField] private GameObject bombs, enemies, granade;
     [SerializeField] private int health;
+    [SerializeField] private float enemySpawnTimer, granadeCadence;
     private bool thrusting = false, dropBombs = false, firstJump = true;
-    private int phase = 0, jumpsLeft = 0, thrustOrientationX = 1, thrustOrientationY = -1;
-    private float walkingTimeTimer = 0, bombsCadenceTimer = 0;
+    private int phase = 0, jumpsLeft = 0, thrustOrientationX = 1, thrustOrientationY = -1, enemySpawnIndex = 0;
+    private float walkingTimeTimer = 0, bombsCadenceTimer = 0, enemySpawnTimerFake = 0, granadeCadenceFake;
     private Rigidbody2D rbBossSaltos;
+    MovimientoPlayer movimientoPlayer;
 
     private void Start()
     {
         rbBossSaltos = GetComponent<Rigidbody2D>();
+        movimientoPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<MovimientoPlayer>();
 
         walkingTimeTimer = walkingTime[phase];
     }
@@ -23,15 +28,15 @@ public class BossSaltos : MonoBehaviour
     {
         //debug zone
 
-        if(health > 100)
+        if (health > 50)
         {
             phase = 0;
         }
-        else if (health > 50)
+        else if (health > 20)
         {
             phase = 1;
         }
-        else if(health > 20)
+        else if(health > 0)
         {
             phase = 2;
         }
@@ -54,7 +59,7 @@ public class BossSaltos : MonoBehaviour
                 rbBossSaltos.AddForce(new Vector2(0, 1000));
             }
             thrusting = true;
-            jumpsLeft = 7;
+            jumpsLeft = jumpsPhase[phase];
         }
 
         if (dropBombs && phase > 0) 
@@ -67,6 +72,17 @@ public class BossSaltos : MonoBehaviour
         }
 
         bombsCadenceTimer -= Time.deltaTime;
+
+        if (phase == 2 && thrusting)
+        {
+            enemySpawnTimerFake -= Time.deltaTime;
+            if (enemySpawnTimerFake <= 0) 
+            {
+                enemySpawnIndex = Random.Range(0, 2);
+                Instantiate(enemies, enemySpawn[enemySpawnIndex].transform.position, enemySpawn[enemySpawnIndex].transform.rotation);
+                enemySpawnTimerFake = enemySpawnTimer;
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -79,7 +95,15 @@ public class BossSaltos : MonoBehaviour
         else
         {
             rbBossSaltos.velocity = new Vector2(walkingSpeed[phase] * Time.deltaTime * thrustOrientationX, rbBossSaltos.velocity.y);
+            if(granadeCadenceFake <= 0)
+            {
+                Instantiate(granade, transform.position, transform.rotation);
+                granadeCadenceFake = granadeCadence;
+            }
+
+            granadeCadenceFake -= Time.deltaTime;
             walkingTimeTimer -= Time.deltaTime;
+
             dropBombs = false;
         }
     }
@@ -103,6 +127,17 @@ public class BossSaltos : MonoBehaviour
                 jumpsLeft--;
             }
         }
+
+        if (collision.gameObject.tag == "PlayerSword")
+        {
+            TakeDamage(3);
+            thrustOrientationX *= -1;
+        }
+
+        if (collision.gameObject.tag == "Bullet")
+        {
+            TakeDamage(1);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -110,6 +145,14 @@ public class BossSaltos : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             thrustOrientationX *= -1;
+            thrustOrientationY *= -1;
+            movimientoPlayer.PlayerLife(1);
         }
+    }
+
+    void TakeDamage(int damage)
+    {
+        health--;
+        //take damage feedback
     }
 }

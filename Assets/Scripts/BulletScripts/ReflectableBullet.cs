@@ -10,11 +10,13 @@ public class ReflectableBullet : MonoBehaviour
     int reflectableBulletOrientation = 1;
     private float timer = 10;
     Vector2 reflectableBulletDirection;
+    MovimientoPlayer movimientoPlayer;
 
     private void Start()
     {
         reflectableBulletRigidbody2D = GetComponent<Rigidbody2D>();
         reflectableBulletPlayer = GameObject.FindGameObjectWithTag("Player");
+        movimientoPlayer = reflectableBulletPlayer.GetComponent<MovimientoPlayer>();
 
         reflectableBulletDirection = reflectableBulletPlayer.transform.position - transform.position;
         
@@ -49,6 +51,11 @@ public class ReflectableBullet : MonoBehaviour
         if(gameObject.tag == "Bullet" && (collision.gameObject.tag == "Boss" || collision.gameObject.tag == "StaticProjectileEnemy"))
         {
             Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            movimientoPlayer.PlayerLife(1);
         }
     }
 }

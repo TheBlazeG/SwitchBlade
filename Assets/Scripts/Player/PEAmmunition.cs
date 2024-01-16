@@ -6,6 +6,7 @@ public class PEAmmunition : MonoBehaviour
 {
     private Animator animator;
     private float Carga = 1;
+    public AudioClip TakeChicken;
 
     // Update is called once per frame
     private void Update()
@@ -18,6 +19,7 @@ public class PEAmmunition : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             animator.SetTrigger("Hit");
+            SoundController.Instance.PlaySounds(TakeChicken);
             GetComponent<BoxCollider2D>().enabled = false;
             other.GetComponent<MovimientoPlayer>().Bomba(Carga);
             StartCoroutine(IdleChicken());

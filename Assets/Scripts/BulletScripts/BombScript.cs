@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BombScript : MonoBehaviour
 {
-    [SerializeField] private Collider2D explotionArea;
+    [SerializeField] private GameObject explotionArea;
     [SerializeField] private float explotionTimer, explotionAreaActiveTime;
     private bool active = false;
     private void Update()
@@ -17,11 +17,11 @@ public class BombScript : MonoBehaviour
         if (explotionTimer <= 0 ) 
         {
             explotionAreaActiveTime -= Time.deltaTime;
+            explotionArea.gameObject.SetActive(true);
         }
 
         if(explotionAreaActiveTime <= 0 ) 
         {
-            explotionArea.enabled = true;
             Destroy(gameObject);
         }
     }
