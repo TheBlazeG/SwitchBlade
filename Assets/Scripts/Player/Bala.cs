@@ -31,6 +31,10 @@ public class Bala : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (other.CompareTag("Boss"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     IEnumerator LifetimeCoroutine(float _time)

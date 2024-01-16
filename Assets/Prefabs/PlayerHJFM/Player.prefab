@@ -39,7 +39,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202689394947271982}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0e8789aa3de7488468bcb4de39c38de2, type: 3}
@@ -285,7 +285,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4125080422286704323}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0e8789aa3de7488468bcb4de39c38de2, type: 3}
@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 8908010824547197463}
   - component: {fileID: 5906188795366503330}
   - component: {fileID: 3216790233858477206}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -495,7 +495,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &594277628966738506
 MonoBehaviour:
@@ -535,8 +535,9 @@ MonoBehaviour:
   colisionadorAgachado: {fileID: 8908010824547197463}
   MaxLife: 100
   life: 0
+  currentCheckpoint: {fileID: 0}
   constroladorbala: {fileID: 3469944278947778193}
-  cooldown: 3
+  cooldown: 0.5
   Flecha: {fileID: 7371183832549715515, guid: 2dce39cecb83de744a1e324f21213418, type: 3}
   timelife: 2
   Boom: {fileID: 580938623726980673, guid: 2a5f022896ba1a742ac6fa7b7b788b8c, type: 3}
@@ -696,7 +697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4001049355861825512}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: ControladorPared
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5573148422561384770}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: ControladorTecho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -758,7 +759,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8823695963352254261}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: ControladorSuelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

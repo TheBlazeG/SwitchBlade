@@ -56,6 +56,7 @@ public class MovimientoPlayer : MonoBehaviour
     public float MaxLife = 0;
     public float life = 0;
     private bool DeathPlayer;
+    [SerializeField] GameObject currentCheckpoint;
 
     [Header("DisparoJugador")]
     public Transform constroladorbala;
@@ -99,6 +100,7 @@ public class MovimientoPlayer : MonoBehaviour
 
     private void Update()
     {
+
         inputX = Input.GetAxisRaw("Horizontal");
         movimientoHorizontal = inputX * velocidadDeMovimiento;
         animator.SetFloat("Horizontal", Mathf.Abs(movimientoHorizontal));
@@ -363,7 +365,7 @@ public class MovimientoPlayer : MonoBehaviour
     IEnumerator Muerte()
     {
         yield return new WaitForSeconds(1.5f);
-        gameObject.SetActive (false);
+        transform.position = currentCheckpoint.transform.position;
     }
 
     public IEnumerator Bullet()
@@ -385,7 +387,10 @@ public class MovimientoPlayer : MonoBehaviour
 
     private void Disparo()
     {
-        Instantiate(Flecha, constroladorbala.position, constroladorbala.rotation);w
+
+        Instantiate(Flecha, constroladorbala.position, constroladorbala.rotation);
+        shootAudioSource.Play();
+        
     }
 
     public void Bomba(float MunChicken)
@@ -413,10 +418,20 @@ public class MovimientoPlayer : MonoBehaviour
         Chicken = true;
     }
 
+
     IEnumerator AttackSound()
     {
         CanAttack = false;
         yield return new WaitForSeconds(1f);
         CanAttack = true;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Checkpoint")
+        {
+            Debug.Log("checkpoint changed");
+            currentCheckpoint = collision.gameObject;
+        }
+
     }
 }
