@@ -135,8 +135,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 20
-  dao: 1
+  dao: 3
   lifetime: 3
+  Impact: {fileID: 8300000, guid: 9109cd183b83bc94893e14dc5c8b9881, type: 3}
+  Fly: {fileID: 8300000, guid: f77d25ded386bfd4c8b7ee3091f0fa56, type: 3}
 --- !u!95 &-1881706769463793314
 Animator:
   serializedVersion: 5

@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 10
-  Explotion: 100
+  Explotion: 5
   lifetime: 2
   Chicken: {fileID: 5425735414916931906}
   ChickenFly: {fileID: 8300000, guid: 6acf585fd3b5a9e439c8aed08d7e86a7, type: 3}

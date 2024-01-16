@@ -31,23 +31,30 @@ public class PE : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("EnemigoBeta"))
-        {   
-            StartCoroutine(Death());
+        {
+            StarDeathAnimation();
         }
     }
 
-    IEnumerator Death()
+    public void ExplotionSound()
     {
-        Chicken.PlayOneShot(ChickenDeathBoom);
+       Chicken.PlayOneShot(ChickenDeathBoom);
+    }
+
+    public void Death()
+    {
+        Destroy(gameObject);
+    }
+
+    public void StarDeathAnimation()
+    {
         Run = false;
         animator.SetBool("Death", true);
-        yield return new WaitForSeconds(.8f);
-        Destroy(gameObject);
     }
 
     IEnumerator LifetimeCoroutine(float _time)
     {
         yield return new WaitForSeconds(_time);
-        StartCoroutine(Death());
+        StarDeathAnimation();
     }
 }

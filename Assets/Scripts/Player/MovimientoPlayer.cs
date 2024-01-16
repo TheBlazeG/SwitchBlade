@@ -81,6 +81,10 @@ public class MovimientoPlayer : MonoBehaviour
     public AudioClip ShootFire;
     public AudioClip BoomPlayer;
     public AudioClip BoomChickenSound;
+    public AudioClip JumpSound;
+    public AudioClip DashSound;
+    public AudioClip HealthSound;
+    public AudioClip Down;
 
     private void Start()
     {
@@ -245,6 +249,7 @@ public class MovimientoPlayer : MonoBehaviour
 
     private void Salto()
     {
+        SoundController.Instance.PlaySounds(JumpSound);
         salto = false;
         RB2D.AddForce(new Vector2(0f, fuerzaDeSalto));
 
@@ -252,6 +257,7 @@ public class MovimientoPlayer : MonoBehaviour
 
     public void Dash()
     {
+        SoundController.Instance.PlaySounds(DashSound);
         saltosExtraRestantes -= 1;
         StartCoroutine(dashplayer());
         dash = false;
@@ -319,6 +325,7 @@ public class MovimientoPlayer : MonoBehaviour
 
     public void PlayerCures(float Health)
     {
+        SoundController.Instance.PlaySounds(HealthSound);
         if ((life + Health) > MaxLife)
         {
             life = MaxLife;
@@ -378,7 +385,7 @@ public class MovimientoPlayer : MonoBehaviour
 
     private void Disparo()
     {
-        Instantiate(Flecha, constroladorbala.position, constroladorbala.rotation);
+        Instantiate(Flecha, constroladorbala.position, constroladorbala.rotation);w
     }
 
     public void Bomba(float MunChicken)
