@@ -7,12 +7,17 @@ public class GranadeScript : MonoBehaviour
     Rigidbody2D explosiveBulletRigidbody2D;
     [SerializeField] float granadeSpeed;
     [SerializeField] private GameObject explotionRadius;
+    private int facing = 1;
     private float timer = 0.2f;
     private bool exploted = false;
+    BossSaltos boss;
 
     private void Start()
     {
         explosiveBulletRigidbody2D = GetComponent<Rigidbody2D>();
+        boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossSaltos>();
+
+        facing = boss.facingPlayer;
 
         explotionRadius.gameObject.SetActive(false);
     }
@@ -32,7 +37,7 @@ public class GranadeScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        explosiveBulletRigidbody2D.velocity = new Vector2(granadeSpeed * Time.deltaTime, 0f);
+        explosiveBulletRigidbody2D.velocity = new Vector2(granadeSpeed * Time.deltaTime * facing, 0f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
