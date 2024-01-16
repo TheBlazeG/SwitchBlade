@@ -390,7 +390,6 @@ public class MovimientoPlayer : MonoBehaviour
     {
 
         Instantiate(Flecha, constroladorbala.position, constroladorbala.rotation);
-        shootAudioSource.Play();
         
     }
 
@@ -426,6 +425,7 @@ public class MovimientoPlayer : MonoBehaviour
         yield return new WaitForSeconds(1f);
         CanAttack = true;
 
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Checkpoint")
