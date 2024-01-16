@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c02e397675cb65d489c094d69cb067ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fuerza: 1
+  Fuerza: 3
 --- !u!1 &4125080422286704323
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,8 +545,17 @@ MonoBehaviour:
   Chicken: 0
   ChickenMore: 0
   playerUI: {fileID: 0}
-  swordAudioSource: {fileID: 3346378138783521426}
-  shootAudioSource: {fileID: 7765774143180709613}
+  SwordAttack: {fileID: 8300000, guid: 6e3ebd8aadbc75940903a827c166af84, type: 3}
+  SwordPlayer: {fileID: 8300000, guid: 91182a215edeb894285127cd6a0facfc, type: 3}
+  HitPlayer: {fileID: 8300000, guid: fd4d0ecfae432fb469dea88bb64b5e94, type: 3}
+  DeathSoundPlayer: {fileID: 8300000, guid: 8b675b94da46c724c939451a1c882fc4, type: 3}
+  ShootPlayer: {fileID: 8300000, guid: e8ef51f70e36dc24db002b570f5bd3a7, type: 3}
+  ShootFire: {fileID: 8300000, guid: dd8c2f00ea1f0aa41bdb70255eb70651, type: 3}
+  BoomPlayer: {fileID: 8300000, guid: 8acc10991fcf9a942a64e2bc5caae905, type: 3}
+  BoomChickenSound: {fileID: 8300000, guid: 32b30f77b323e3e43a9b29df79c36903, type: 3}
+  JumpSound: {fileID: 8300000, guid: de86e89828f50754d87f57240e78dfef, type: 3}
+  DashSound: {fileID: 8300000, guid: 90f683b94da357a4185f0fb0fcc9bb13, type: 3}
+  HealthSound: {fileID: 8300000, guid: d55ed164603c097428d8395981980087, type: 3}
 --- !u!58 &8908010824547197463
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -17,6 +17,7 @@ public class MovimientoPlayer : MonoBehaviour
     private Vector3 velocidad = Vector3.zero;
     private bool mirandoDerecha = true;
     public Vector2 input;
+    private bool CanAttack = true;
 
     [Header("Salto")]
     public float fuerzaDeSalto;
@@ -72,10 +73,19 @@ public class MovimientoPlayer : MonoBehaviour
     [Header("PlayerUI")]
     public PlayerUI playerUI;
 
-    [Header("Attack and Shoot")]
-    public AudioSource swordAudioSource;  
-    public AudioSource shootAudioSource;
-    
+    [Header("SoundsPlalyer")]
+    public AudioClip SwordAttack;
+    public AudioClip SwordPlayer;
+    public AudioClip HitPlayer;
+    public AudioClip DeathSoundPlayer;
+    public AudioClip ShootPlayer;
+    public AudioClip ShootFire;
+    public AudioClip BoomPlayer;
+    public AudioClip BoomChickenSound;
+    public AudioClip JumpSound;
+    public AudioClip DashSound;
+    public AudioClip HealthSound;
+    public AudioClip Down;
 
     private void Start()
     {
@@ -112,20 +122,26 @@ public class MovimientoPlayer : MonoBehaviour
         if(!agachar)
         {
             
-            if(Input.GetButtonDown("Fire1"))
+            if(Input.GetButtonDown("Fire1") && CanAttack)
             {
-                swordAudioSource.Play();
-                StartCoroutine(attack());               
+                SoundController.Instance.PlaySounds(SwordAttack);
+                SoundController.Instance.PlaySounds(SwordPlayer);
+                StartCoroutine(attack());    
+                StartCoroutine(AttackSound());           
             }
             
             if (Input.GetButtonDown("Fire2") && CanShoot)
             {
+                SoundController.Instance.PlaySounds(ShootFire);
+                SoundController.Instance.PlaySounds(ShootPlayer);
                 StartCoroutine(Bullet());
                 StartCoroutine(CooldownCoroutine(cooldown));
             }
 
             if(Input.GetKey("g") && CanShoot && ChickenMore > 0)
             {
+                SoundController.Instance.PlaySounds(BoomPlayer);
+                SoundController.Instance.PlaySounds(BoomChickenSound);
                 StartCoroutine(PETime());
                 ChickenMore -= 1;
                 playerUI.SetAmmo(-1);
@@ -235,6 +251,7 @@ public class MovimientoPlayer : MonoBehaviour
 
     private void Salto()
     {
+        SoundController.Instance.PlaySounds(JumpSound);
         salto = false;
         RB2D.AddForce(new Vector2(0f, fuerzaDeSalto));
 
@@ -242,6 +259,7 @@ public class MovimientoPlayer : MonoBehaviour
 
     public void Dash()
     {
+        SoundController.Instance.PlaySounds(DashSound);
         saltosExtraRestantes -= 1;
         StartCoroutine(dashplayer());
         dash = false;
@@ -296,17 +314,20 @@ public class MovimientoPlayer : MonoBehaviour
         {
             NDash();
             DeathPlayer = true;
+            SoundController.Instance.PlaySounds(DeathSoundPlayer);
             animator.SetBool("Death", true); 
             StartCoroutine(Muerte());
         }
         else
         {
+            SoundController.Instance.PlaySounds(HitPlayer);
             NDash();
         }
     }
 
     public void PlayerCures(float Health)
     {
+        SoundController.Instance.PlaySounds(HealthSound);
         if ((life + Health) > MaxLife)
         {
             life = MaxLife;
@@ -366,6 +387,7 @@ public class MovimientoPlayer : MonoBehaviour
 
     private void Disparo()
     {
+
         Instantiate(Flecha, constroladorbala.position, constroladorbala.rotation);
         shootAudioSource.Play();
         
@@ -396,6 +418,13 @@ public class MovimientoPlayer : MonoBehaviour
         Chicken = true;
     }
 
+
+    IEnumerator AttackSound()
+    {
+        CanAttack = false;
+        yield return new WaitForSeconds(1f);
+        CanAttack = true;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Checkpoint")
@@ -403,5 +432,6 @@ public class MovimientoPlayer : MonoBehaviour
             Debug.Log("checkpoint changed");
             currentCheckpoint = collision.gameObject;
         }
+
     }
 }
