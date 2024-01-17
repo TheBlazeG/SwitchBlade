@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2827310763559272435}
   - component: {fileID: 1313939755233852745}
   - component: {fileID: 9049324804183502654}
+  - component: {fileID: 8859893571206682782}
   m_Layer: 0
   m_Name: Capsule (1)
   m_TagString: EnemigoBeta
@@ -177,6 +178,23 @@ MonoBehaviour:
   RB2D: {fileID: 1313939755233852745}
   Push: 1
   Up: 200
+--- !u!114 &8859893571206682782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538505079145605155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f1998629d221c479614d6fb62de8aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 1899294037653531025, guid: dfa88e891a26029469bd96a1162e2ef7, type: 3}
+  - {fileID: 320292077229681420, guid: 0101426610e0e664e977af203e821b8d, type: 3}
+  - {fileID: 3940304025254819511, guid: 45c98aab1b2463a4db453e65acead4f2, type: 3}
+  - {fileID: 3940304025254819511, guid: 45c98aab1b2463a4db453e65acead4f2, type: 3}
 --- !u!1 &6252045258338998200
 GameObject:
   m_ObjectHideFlags: 0

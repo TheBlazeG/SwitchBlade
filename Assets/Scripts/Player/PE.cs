@@ -34,6 +34,11 @@ public class PE : MonoBehaviour
         {
             StarDeathAnimation();
         }
+
+        if (other.CompareTag("EnemyAir"))
+        {
+            StarDeathAnimation();
+        }
     }
 
     public void ExplotionSound()

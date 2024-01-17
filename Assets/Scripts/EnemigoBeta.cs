@@ -8,20 +8,26 @@ public class EnemigoBeta : MonoBehaviour
     public int BaseLife;
     public float Knockbackforce;
     public Rigidbody2D RB2D;
-    public float Push;
+    private int Push = 1;
     public float Up;
+    public GameObject player;
+
+    DroppingItems items;
 
     private void Start()
     {
         Life = BaseLife;
+        items = GetComponent<DroppingItems>();
     }
 
     public void Dao(int dao)
     {
         Life -= dao;
         Knockback();
+        
         if (Life <= 0)
         {
+            items.ItemsDropped();
             Muerte();
         }
     }
@@ -34,6 +40,13 @@ public class EnemigoBeta : MonoBehaviour
 
     public void Knockback()
     {   
-        RB2D.AddForce(new Vector2(Knockbackforce * Push, Up));
+        if(transform.position.x > player.transform.position.x)
+        {
+            RB2D.AddForce(new Vector2(Knockbackforce * Push, Up));
+        }
+        else
+        {
+            RB2D.AddForce(new Vector2(Knockbackforce * -Push, Up));
+        }
     }
 }

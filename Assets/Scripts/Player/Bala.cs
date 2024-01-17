@@ -26,6 +26,13 @@ public class Bala : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (other.CompareTag("EnemyAir"))
+        {
+            SoundController.Instance.PlaySounds(Impact);
+            other.GetComponent<EnemigoBeta>().Dao(dao);
+            Destroy(gameObject);
+        }
+
         if (other.CompareTag("Wall"))
         {
             Destroy(gameObject);

@@ -56,8 +56,9 @@ public class MovimientoPlayer : MonoBehaviour
     public float MaxLife = 0;
     public float life = 0;
     private bool DeathPlayer;
+    private bool CanTakeDamage = true;
     [SerializeField] GameObject currentCheckpoint;
-
+    
     [Header("DisparoJugador")]
     public Transform constroladorbala;
     public float cooldown;
@@ -69,6 +70,7 @@ public class MovimientoPlayer : MonoBehaviour
     private bool CanShoot = true;
     public bool Chicken;
     public float ChickenMore;
+    private bool ShootUnlock;
 
     [Header("PlayerUI")]
     public PlayerUI playerUI;
@@ -130,7 +132,7 @@ public class MovimientoPlayer : MonoBehaviour
                 StartCoroutine(AttackSound());           
             }
             
-            if (Input.GetButtonDown("Fire2") && CanShoot)
+            if (Input.GetButtonDown("Fire2") && CanShoot && ShootUnlock)
             {
                 SoundController.Instance.PlaySounds(ShootFire);
                 SoundController.Instance.PlaySounds(ShootPlayer);
@@ -309,20 +311,24 @@ public class MovimientoPlayer : MonoBehaviour
 
     public void PlayerLife(float Damage)
     {
-        life -= Damage;
-        playerUI.SetHealth(Damage);
-        if (life <= 0)
+        if(CanTakeDamage)
         {
-            NDash();
-            DeathPlayer = true;
-            SoundController.Instance.PlaySounds(DeathSoundPlayer);
-            animator.SetBool("Death", true); 
-            StartCoroutine(Muerte());
-        }
-        else
-        {
-            SoundController.Instance.PlaySounds(HitPlayer);
-            NDash();
+            life -= Damage;
+            playerUI.SetHealth(Damage);
+            if (life <= 0)
+            {
+                NDash();
+                DeathPlayer = true;
+                SoundController.Instance.PlaySounds(DeathSoundPlayer);
+                animator.SetBool("Death", true); 
+                StartCoroutine(Muerte());
+            }
+            else
+            {
+                SoundController.Instance.PlaySounds(HitPlayer);
+                NDash();
+                StartCoroutine(Invincibility());
+            }
         }
     }
 
@@ -395,8 +401,16 @@ public class MovimientoPlayer : MonoBehaviour
 
     public void Bomba(float MunChicken)
     {
-        ChickenMore += MunChicken;
-        playerUI.SetAmmo(MunChicken);
+        if((ChickenMore + MunChicken) > limitChicken)
+        {
+            ChickenMore = limitChicken;
+            playerUI.SetAmmo(limitChicken);
+        }
+        else
+        {
+            ChickenMore += MunChicken;
+            playerUI.SetAmmo(MunChicken);
+        }
     }
 
     public void BoomChicken()
@@ -426,6 +440,13 @@ public class MovimientoPlayer : MonoBehaviour
         CanAttack = true;
 
     }
+
+    IEnumerator Invincibility()
+    {
+        CanTakeDamage = false;
+        yield return new WaitForSeconds(.5f);
+        CanTakeDamage = true;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Checkpoint")
@@ -434,5 +455,10 @@ public class MovimientoPlayer : MonoBehaviour
             currentCheckpoint = collision.gameObject;
         }
 
+    }
+
+    public void ShootUnlockPP()
+    {
+        ShootUnlock = true;
     }
 }
