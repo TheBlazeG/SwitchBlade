@@ -9,10 +9,12 @@ public class FirstBossFollowersLeft : MonoBehaviour
     [SerializeField] float staticEnemyShootTime, staticEnemyFirstShootTime;
     FirstBossScript boss;
     MovimientoPlayer movimientoPlayer;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         InvokeRepeating("ShootReflectableBulletToPlayer", staticEnemyFirstShootTime, staticEnemyShootTime);
         boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<FirstBossScript>();
         movimientoPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<MovimientoPlayer>();
@@ -25,10 +27,14 @@ public class FirstBossFollowersLeft : MonoBehaviour
             boss.firstBossFollowersLeft--;
             Destroy(gameObject);
         }
+        animator.SetBool("shooting", true);
+        StartCoroutine(animateShoot());
     }
 
     void ShootReflectableBulletToPlayer()
     {
+        
+        
         Instantiate(reflectableBullets, transform.position, Quaternion.identity);
     }
 
@@ -43,5 +49,11 @@ public class FirstBossFollowersLeft : MonoBehaviour
         {
             movimientoPlayer.PlayerLife(1);
         }
+    }
+
+    IEnumerator animateShoot() 
+    {
+        yield return new WaitForSeconds(.5f);
+        animator.SetBool("shooting", false);
     }
 }

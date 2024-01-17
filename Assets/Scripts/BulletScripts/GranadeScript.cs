@@ -11,11 +11,13 @@ public class GranadeScript : MonoBehaviour
     private float timer = 0.2f;
     private bool exploted = false;
     BossSaltos boss;
+    Animator animator;
 
     private void Start()
     {
         explosiveBulletRigidbody2D = GetComponent<Rigidbody2D>();
         boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossSaltos>();
+        animator = GetComponent<Animator>();
 
         facing = boss.facingPlayer;
 
@@ -27,6 +29,7 @@ public class GranadeScript : MonoBehaviour
 
         if (exploted)
         {
+            animator.SetBool("exploted", true);
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
