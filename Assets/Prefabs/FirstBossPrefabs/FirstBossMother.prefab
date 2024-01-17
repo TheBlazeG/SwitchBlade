@@ -500,6 +500,10 @@ PrefabInstance:
       propertyPath: currentPhase
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 235599762819633586, guid: e58ebc79c74e56846979debc7498cdd8, type: 3}
+      propertyPath: phase
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1081725101950643053, guid: e58ebc79c74e56846979debc7498cdd8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.815142

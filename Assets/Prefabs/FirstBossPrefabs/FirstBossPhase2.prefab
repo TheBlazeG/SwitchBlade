@@ -299,6 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletType:
+  - {fileID: 7957053713505198765, guid: fa10a0d33d6036342911135d3ced9f97, type: 3}
   - {fileID: 9101786515398737763, guid: 7119b5243991ee34ea4a225a54c4a9a9, type: 3}
   bulletSpawnPlace: {fileID: 5210382964244716105}
   firstBossShootTime: 2.8
