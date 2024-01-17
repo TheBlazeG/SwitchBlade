@@ -8,10 +8,12 @@ public class BossSaltos : MonoBehaviour
     [SerializeField] private List<int> jumpsPhase;
     [SerializeField] private List<GameObject> enemySpawn;
     [SerializeField] private GameObject bombs, enemies, granade;
+    [SerializeField] private GameObject player;
     [SerializeField] private int health;
     [SerializeField] private float enemySpawnTimer, granadeCadence;
-    private bool thrusting = false, dropBombs = false, firstJump = true;
-    private int phase = 0, jumpsLeft = 0, thrustOrientationX = 1, thrustOrientationY = -1, enemySpawnIndex = 0;
+    private bool thrusting = false, dropBombs = false;
+    private int phase = 0, jumpsLeft = 0, thrustOrientationY = -1, thrustOrientationX = 1, enemySpawnIndex = 0;
+    public int facingPlayer = 1;
     private float walkingTimeTimer = 0, bombsCadenceTimer = 0, enemySpawnTimerFake = 0, granadeCadenceFake;
     private Rigidbody2D rbBossSaltos;
     MovimientoPlayer movimientoPlayer;
@@ -27,6 +29,16 @@ public class BossSaltos : MonoBehaviour
     private void Update()
     {
         //debug zone
+
+        if (transform.position.x < player.transform.position.x)
+        {
+            facingPlayer = 1;
+        }
+        else if (transform.position.x > player.transform.position.x)
+        {
+            facingPlayer = -1;
+        }
+
 
         if (health > 50)
         {
@@ -53,11 +65,6 @@ public class BossSaltos : MonoBehaviour
 
         if (walkingTimeTimer <= 0 && jumpsLeft <= 0) 
         {
-            if (firstJump) 
-            {
-                firstJump = false;
-                rbBossSaltos.AddForce(new Vector2(0, 1000));
-            }
             thrusting = true;
             jumpsLeft = jumpsPhase[phase];
         }
@@ -82,6 +89,11 @@ public class BossSaltos : MonoBehaviour
                 Instantiate(enemies, enemySpawn[enemySpawnIndex].transform.position, enemySpawn[enemySpawnIndex].transform.rotation);
                 enemySpawnTimerFake = enemySpawnTimer;
             }
+        }
+
+        if (!thrusting)
+        {
+            thrustOrientationY = 1;
         }
     }
 
