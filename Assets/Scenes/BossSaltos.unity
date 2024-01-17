@@ -356,6 +356,8 @@ MonoBehaviour:
   - {fileID: 2647627685168008965, guid: 5d2a61e1df33ef1438c27b476e7a4e4b, type: 3}
   - {fileID: 5049374375285075426, guid: 58693be35b243394a8368139f64380d9, type: 3}
   - {fileID: 3510168731676103139, guid: e58ebc79c74e56846979debc7498cdd8, type: 3}
+  projectilesUpgrade: {fileID: 0}
+  upgradeSpawn: {fileID: 0}
   firstBossCurrentPhase: 0
   firstBossHealthTemp: 0
   bossDefeated: 0
