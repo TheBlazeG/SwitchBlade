@@ -6,6 +6,7 @@ public class FirstBossManager : MonoBehaviour
 {
     [SerializeField] int firstBossHealth;
     [SerializeField] private List<GameObject> firstBossPhases;
+    [SerializeField] private GameObject projectilesUpgrade, upgradeSpawn;
     public int firstBossCurrentPhase = 0, firstBossHealthTemp;
     public bool bossDefeated = false;
 
@@ -16,15 +17,18 @@ public class FirstBossManager : MonoBehaviour
 
     private void Update()
     {
+
         if (firstBossHealthTemp <= 0 && firstBossCurrentPhase <= 1)
         {
             Instantiate(firstBossPhases[firstBossCurrentPhase + 1]);
             firstBossHealthTemp = firstBossHealth;
             firstBossCurrentPhase++;
         }
-        if (firstBossCurrentPhase >= 2)
+        
+        if (bossDefeated) 
         {
-            bossDefeated = true;
+            Instantiate(projectilesUpgrade, upgradeSpawn.transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
 
