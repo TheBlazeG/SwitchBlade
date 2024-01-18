@@ -16,7 +16,10 @@ public class Attack : MonoBehaviour
         {
             other.GetComponent<EnemigoBeta>().Dao(Fuerza);
         } 
+    }
 
-
+    public void UpdateDamage(int O)
+    {
+        Fuerza += O;
     }
 }

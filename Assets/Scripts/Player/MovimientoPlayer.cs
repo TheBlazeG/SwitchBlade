@@ -461,4 +461,11 @@ public class MovimientoPlayer : MonoBehaviour
     {
         ShootUnlock = true;
     }
+
+    public void UpdateLife()
+    {
+        MaxLife += 5;
+    }
+
+    
 }

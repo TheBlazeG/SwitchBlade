@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6556250576668281912}
   - component: {fileID: 4791008181194508200}
-  - component: {fileID: 8848177080974957896}
   - component: {fileID: 6316317721270446661}
+  - component: {fileID: 8778148643749766055}
   m_Layer: 0
   m_Name: ShootUnlock
   m_TagString: Untagged
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: de9fc55b4d69c47459ae26bd1c495a8d, type: 3}
-  m_Color: {r: 0.9245283, g: 0.102890894, b: 0, a: 1}
+  m_Color: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8848177080974957896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2518805338342565156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd67efdd1f21e1a4e83c9d1df0d15e3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &6316317721270446661
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.8, y: 9.8}
   m_EdgeRadius: 0
+--- !u!114 &8778148643749766055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518805338342565156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd67efdd1f21e1a4e83c9d1df0d15e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundObject: {fileID: 8300000, guid: 6eaa9f3935d7cff499d67b88a07c0414, type: 3}
