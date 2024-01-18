@@ -6,7 +6,7 @@ public class WallBullet : MonoBehaviour
 {
     [SerializeField] float wallBulletSpeed;
     private Rigidbody2D wallBulletRigidbody2d;
-    private float timer = 15;
+    private float timer = 7;
     MovimientoPlayer movimientoPlayer;
     Animator animator;
 

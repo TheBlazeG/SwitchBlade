@@ -6,7 +6,7 @@ public class FallingSpike : MonoBehaviour
 {
     MovimientoPlayer movimientoPlayer;
 
-    private float timer = 15;
+    private float timer = 6;
 
     private void Start()
     {
