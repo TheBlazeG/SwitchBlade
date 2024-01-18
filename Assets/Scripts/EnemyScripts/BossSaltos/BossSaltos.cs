@@ -7,21 +7,25 @@ public class BossSaltos : MonoBehaviour
     [SerializeField] private List<float> bossSaltosSpeed, walkingTime, walkingSpeed, bombsCadence;
     [SerializeField] private List<int> jumpsPhase;
     [SerializeField] private List<GameObject> enemySpawn;
-    [SerializeField] private GameObject bombs, enemies, granade;
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject bombs, enemies, granade, spawn;
     [SerializeField] private int health;
-    [SerializeField] private float enemySpawnTimer, granadeCadence;
-    private bool thrusting = false, dropBombs = false;
+    [SerializeField] private float enemySpawnTimer, granadeCadence, pushForce;
+    [SerializeField] private Collider2D colliderA, colliderB;
+    private bool thrusting = false, dropBombs = false, changingDirection = false, pushed = false, beingHit = false;
     private int phase = 0, jumpsLeft = 0, thrustOrientationY = -1, thrustOrientationX = 1, enemySpawnIndex = 0;
     public int facingPlayer = 1;
     private float walkingTimeTimer = 0, bombsCadenceTimer = 0, enemySpawnTimerFake = 0, granadeCadenceFake;
     private Rigidbody2D rbBossSaltos;
+    private GameObject player;
     MovimientoPlayer movimientoPlayer;
+    Animator animator;
 
     private void Start()
     {
         rbBossSaltos = GetComponent<Rigidbody2D>();
-        movimientoPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<MovimientoPlayer>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        movimientoPlayer = player.GetComponent<MovimientoPlayer>();
+        animator = GetComponent<Animator>();
 
         walkingTimeTimer = walkingTime[phase];
     }
@@ -29,6 +33,8 @@ public class BossSaltos : MonoBehaviour
     private void Update()
     {
         //debug zone
+        
+        
 
         if (transform.position.x < player.transform.position.x)
         {
@@ -40,7 +46,7 @@ public class BossSaltos : MonoBehaviour
         }
 
 
-        if (health > 50)
+        if (health > 40)
         {
             phase = 0;
         }
@@ -73,7 +79,7 @@ public class BossSaltos : MonoBehaviour
         {
             if(bombsCadenceTimer <= 0)
             {
-                Instantiate(bombs, transform.position, transform.rotation);
+                Instantiate(bombs, spawn.transform.position, transform.rotation);
                 bombsCadenceTimer = bombsCadence[phase];
             }
         }
@@ -95,21 +101,40 @@ public class BossSaltos : MonoBehaviour
         {
             thrustOrientationY = 1;
         }
+
+        if(rbBossSaltos.velocity.y == 0)
+        {
+            thrustOrientationY *= -1;
+        }
+
+        if (rbBossSaltos.velocity.x == 0)
+        {
+            thrustOrientationX *= -1;
+        }
     }
 
     private void FixedUpdate()
     {
         if (thrusting)
         {
+            colliderB.enabled = true;
+            colliderA.enabled = false;
+            animator.SetBool("bouncing", true);
             rbBossSaltos.velocity = new Vector2(bossSaltosSpeed[phase] * Time.deltaTime * thrustOrientationX, bossSaltosSpeed[phase] * Time.deltaTime * thrustOrientationY);
             dropBombs = true;
         }
         else
         {
-            rbBossSaltos.velocity = new Vector2(walkingSpeed[phase] * Time.deltaTime * thrustOrientationX, rbBossSaltos.velocity.y);
+            colliderB.enabled = false;
+            colliderA.enabled = true;
+            animator.SetBool("bouncing", false);
+            if (!pushed)
+            {
+                rbBossSaltos.velocity = new Vector2(walkingSpeed[phase] * Time.deltaTime * thrustOrientationX, rbBossSaltos.velocity.y);
+            }
             if(granadeCadenceFake <= 0)
             {
-                Instantiate(granade, transform.position, transform.rotation);
+                Instantiate(granade, spawn.transform.position, transform.rotation);
                 granadeCadenceFake = granadeCadence;
             }
 
@@ -140,22 +165,32 @@ public class BossSaltos : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.tag == "PlayerSword")
+        if (collision.gameObject.tag == "PlayerSword" && thrusting && !changingDirection)
         {
+            StartCoroutine(ChangingDirectionBool());
             TakeDamage(3);
             thrustOrientationX *= -1;
         }
 
-        if (collision.gameObject.tag == "Bullet")
+        if(collision.gameObject.tag == "PlayerSword" && !thrusting)
         {
+            StartCoroutine(pushedBool());
+            rbBossSaltos.AddForce(Vector2.right * -facingPlayer * pushForce, ForceMode2D.Impulse);
+            TakeDamage(3);
+        }
+
+        if (collision.gameObject.tag == "Bullet" && !beingHit)
+        {
+            StartCoroutine(BeingHit());
             TakeDamage(1);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && thrusting && !changingDirection)
         {
+            StartCoroutine(ChangingDirectionBool());
             thrustOrientationX *= -1;
             thrustOrientationY *= -1;
             movimientoPlayer.PlayerLife(1);
@@ -164,7 +199,41 @@ public class BossSaltos : MonoBehaviour
 
     void TakeDamage(int damage)
     {
-        health--;
+        health -= damage;
+        StartCoroutine(animateHurt());
+        
         //take damage feedback
+    }
+
+    IEnumerator pushedBool()
+    {
+        pushed = true;
+        yield return new WaitForSeconds(.75f);
+        pushed = false;
+    }
+
+    IEnumerator ChangingDirectionBool()
+    {
+        changingDirection = true;
+        yield return new WaitForSeconds(.2f);
+        changingDirection = false;
+    }
+
+    IEnumerator animateHurt()
+    {
+        animator.SetBool("hurt", true);
+        colliderB.enabled = false;
+        colliderA.enabled = true;
+        yield return new WaitForSeconds(.2f);
+        colliderB.enabled = false;
+        colliderA.enabled = true;
+        animator.SetBool("hurt", false);
+    }
+
+    IEnumerator BeingHit() 
+    {
+        beingHit = true;
+        yield return new WaitForSeconds(.5f);
+        beingHit = false;
     }
 }
