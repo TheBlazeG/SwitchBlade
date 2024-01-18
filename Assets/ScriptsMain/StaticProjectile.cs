@@ -8,7 +8,7 @@ public class StaticProjectile : MonoBehaviour
     [SerializeField] float reflectableBulletSpeed;
     int reflectableBulletOrientation = 0;
     [SerializeField] int bulletOrientation;
-    private float timer = 10;
+    //private float timer = 10;
 
     MovimientoPlayer movimientoPlayer;
     // Start is called before the first frame update 
@@ -22,11 +22,11 @@ public class StaticProjectile : MonoBehaviour
 
     private void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer < 0)
-        {
-            Destroy(gameObject);
-        }
+        //timer -= Time.deltaTime;
+        //if (timer < 0)
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 
     private void FixedUpdate()
@@ -39,9 +39,13 @@ public class StaticProjectile : MonoBehaviour
         if (collision.gameObject.tag == "PlayerSword")
         {
             gameObject.tag = "Bullet";
-            reflectableBulletOrientation = -3;
+            reflectableBulletOrientation = bulletOrientation;
         }
-       
+
+        if (collision.gameObject.tag == "Switch")
+        {
+            Destroy(gameObject);
+        }
 
         if (gameObject.tag == "Bullet" && (collision.gameObject.tag == "Boss" || collision.gameObject.tag == "StaticProjectileEnemy"))
         {
