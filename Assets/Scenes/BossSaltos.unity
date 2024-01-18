@@ -887,6 +887,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 594277628966738506, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
+      propertyPath: Chicken
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594277628966738506, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
       propertyPath: cooldown
       value: 0.35
       objectReference: {fileID: 0}
@@ -894,6 +898,10 @@ PrefabInstance:
       propertyPath: playerUI
       value: 
       objectReference: {fileID: 1271286247}
+    - target: {fileID: 594277628966738506, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
+      propertyPath: ChickenMore
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2604089102084580146, guid: 5940cba2add8a5949a9ca1a1464c3074, type: 3}
       propertyPath: Fuerza
       value: 3
