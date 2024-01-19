@@ -25,6 +25,7 @@ public class activateBoss : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            
             Instantiate(boss, spawn.transform.position, Quaternion.identity);
         }
         activatedOnce = true;

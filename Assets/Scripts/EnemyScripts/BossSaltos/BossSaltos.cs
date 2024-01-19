@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class BossSaltos : MonoBehaviour
 {
@@ -143,6 +144,11 @@ public class BossSaltos : MonoBehaviour
 
             dropBombs = false;
         }
+
+        if (!thrusting && transform.localPosition.y < -8.711056)
+        {
+            transform.localPosition = new Vector2(transform.localPosition.x, -8.711056f);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -159,7 +165,7 @@ public class BossSaltos : MonoBehaviour
         if (collision.gameObject.tag == "impactWallY")
         {
             thrustOrientationY *= -1;
-            if (thrusting)
+            if (thrusting && thrustOrientationY == -1)
             {
                 jumpsLeft--;
             }
