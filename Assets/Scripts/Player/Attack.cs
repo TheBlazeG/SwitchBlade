@@ -11,6 +11,15 @@ public class Attack : MonoBehaviour
         if(other.CompareTag("EnemigoBeta"))
         {
             other.GetComponent<EnemigoBeta>().Dao(Fuerza);
-        }  
+        }
+        if(other.CompareTag("EnemyAir"))
+        {
+            other.GetComponent<EnemigoBeta>().Dao(Fuerza);
+        } 
+    }
+
+    public void UpdateDamage(int O)
+    {
+        Fuerza += O;
     }
 }

@@ -32,6 +32,13 @@ public class Bala : MonoBehaviour
             Destroy(gameObject);
         }
 
+
+        if (other.CompareTag("EnemyAir"))
+        {
+            SoundController.Instance.PlaySounds(Impact);
+            other.GetComponent<EnemigoBeta>().Dao(dao);
+            Destroy(gameObject);
+
         if (other.CompareTag("Switch"))
         {
                 
@@ -44,6 +51,7 @@ public class Bala : MonoBehaviour
                 {
                     block.isOn = true;
                 }
+                
         }
 
         if (other.CompareTag("Wall"))
