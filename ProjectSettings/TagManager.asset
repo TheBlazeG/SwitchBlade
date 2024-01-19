@@ -17,6 +17,8 @@ TagManager:
   - impactWallX
   - impactWallY
   - Checkpoint
+  - Switch
+  - Block
   layers:
   - Default
   - TransparentFX

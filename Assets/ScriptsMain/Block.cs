@@ -29,4 +29,28 @@ public class Block : MonoBehaviour
             redswitch.SetBool("OnOff", false);
         }
     }
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Bullet")
+    //    {
+    //        if (isOn)
+    //        {
+    //            SwitchOn();
+    //        }
+    //        else if (!isOn)
+    //        {
+    //            SwitchOff();
+    //        }
+    //        Destroy(gameObject);
+    //    }
+    //}
+    //public void SwitchOn()
+    //{
+    //    redswitch.SetBool("OnOff", true);
+    //}
+    //public void SwitchOff()
+    //{
+    //    redswitch.SetBool("OnOff", false);
+    //}
 }
