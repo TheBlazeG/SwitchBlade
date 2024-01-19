@@ -5,17 +5,25 @@ using UnityEngine;
 public class StaticBulletSwitch : MonoBehaviour
 {
     [SerializeField] private GameObject Door;
-    public Color imageActiveColor, imageDeactiveColor;
     public bool imageState = true;
-    [SerializeField] private GameObject Switch;
-    
+    private Animator doorSwitch;
+    public bool isOn;
+
+    private void Start()
+    {
+        doorSwitch = GetComponent<Animator>();
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Bullet")
         {
             Door.SetActive(false);
-            ChangeimageState();
+            if(!isOn)
+            {
+                doorSwitch.SetBool("OnOff", true);
+            }
         }
     }
 
