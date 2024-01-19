@@ -12,5 +12,10 @@ public class PEAttack : MonoBehaviour
         {
             other.GetComponent<EnemigoBeta>().Dao(Boom);
         }
+
+        if (other.CompareTag("EnemyAir"))
+        {
+            other.GetComponent<EnemigoBeta>().Dao(Boom);
+        }
     }
 }

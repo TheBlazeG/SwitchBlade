@@ -13,11 +13,13 @@ public class AIChase : MonoBehaviour
     Rigidbody2D rb;
     Vector3 localScale;
     float dirX;
+    private Animator animator;
 
     private void Start()
     {
         localScale = transform.localScale;
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -66,14 +68,17 @@ public class AIChase : MonoBehaviour
         {
 
             case "Obstacle":
-                rb.AddForce(Vector2.up * 350f);
+                rb.AddForce(Vector2.up * 450f);
+                animator.Play("Jump");  
+
                 //print("obstaculo");
                 break;
 
-            case "Platform":
+            case "Platform":    
                 rb.AddForce(Vector2.up * 450f);
                 //print("platform");
                 break;
+
             case "Ground":
                 transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, 0f);
                 break;

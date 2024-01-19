@@ -34,6 +34,11 @@ public class PE : MonoBehaviour
         {
             StarDeathAnimation();
         }
+
+        if (other.CompareTag("EnemyAir"))
+        {
+            StarDeathAnimation();
+        }
     }
 
     public void ExplotionSound()
@@ -49,12 +54,13 @@ public class PE : MonoBehaviour
     public void StarDeathAnimation()
     {
         Run = false;
-        animator.SetBool("Death", true);
+        animator.SetBool("Death", true);    
     }
 
     IEnumerator LifetimeCoroutine(float _time)
     {
         yield return new WaitForSeconds(_time);
         StarDeathAnimation();
+   
     }
 }

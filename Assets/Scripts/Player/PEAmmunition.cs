@@ -23,7 +23,6 @@ public class PEAmmunition : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
             other.GetComponent<MovimientoPlayer>().Bomba(Carga);
             StartCoroutine(IdleChicken());
-            
         }
     }
 

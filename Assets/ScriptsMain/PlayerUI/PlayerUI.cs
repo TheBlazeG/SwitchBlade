@@ -10,7 +10,7 @@ public class PlayerUI : MonoBehaviour
     public Image skillImage;
 
     public Color skillImageActiveColor, skillImageDeactiveColor;
-    public bool skillImageState = false;
+    public bool skillImageState = true;
 
     private void Update()
     {

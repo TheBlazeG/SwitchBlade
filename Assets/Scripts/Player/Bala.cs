@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.Collections.AllocatorManager;
 
 public class Bala : MonoBehaviour
 {
@@ -9,7 +10,12 @@ public class Bala : MonoBehaviour
     public float lifetime;
     public AudioClip Impact;
     public AudioClip Fly;
+    Block block;
 
+    private void Start()
+    {
+        block = GameObject.FindGameObjectWithTag("Block").GetComponent<Block>();
+    }
 
     private void Update()
     {
@@ -24,6 +30,28 @@ public class Bala : MonoBehaviour
             SoundController.Instance.PlaySounds(Impact);
             other.GetComponent<EnemigoBeta>().Dao(dao);
             Destroy(gameObject);
+        }
+
+
+        if (other.CompareTag("EnemyAir"))
+        {
+            SoundController.Instance.PlaySounds(Impact);
+            other.GetComponent<EnemigoBeta>().Dao(dao);
+            Destroy(gameObject);
+
+        if (other.CompareTag("Switch"))
+        {
+                
+                Debug.Log("test");
+                if (block.isOn)
+                {
+                    block.isOn = false;
+                }
+                else if (!block.isOn)
+                {
+                    block.isOn = true;
+                }
+                
         }
 
         if (other.CompareTag("Wall"))
