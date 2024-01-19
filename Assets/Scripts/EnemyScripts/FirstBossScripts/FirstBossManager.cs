@@ -13,6 +13,7 @@ public class FirstBossManager : MonoBehaviour
     private void Start()
     {
         firstBossHealthTemp = firstBossHealth;
+        Instantiate(firstBossPhases[0], bossSpawn.transform.position, Quaternion.identity);
     }
 
     private void Update()

@@ -146,7 +146,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1495384331, guid: 31cae808dcdcac949a38fefb7dbdc817, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.6084906, b: 0.6084906, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstBossFollowersLeft: 4
   firstBossHealth: 3
-  phase: 1
+  phase: 3
   appearFollowersTime: 8
   followers:
   - {fileID: 7795829835361300751, guid: b496387296acea24191ffd0eb20bf96f, type: 3}
@@ -268,10 +268,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletType:
+  - {fileID: 7957053713505198765, guid: fa10a0d33d6036342911135d3ced9f97, type: 3}
   - {fileID: 9101786515398737763, guid: 7119b5243991ee34ea4a225a54c4a9a9, type: 3}
   bulletSpawnPlace: {fileID: 533143548792584635}
   firstBossShootTime: 2.8
-  currentPhase: 1
+  currentPhase: 3
   shootAnimationTimer: 1.2
 --- !u!95 &1297006399655751130
 Animator:
