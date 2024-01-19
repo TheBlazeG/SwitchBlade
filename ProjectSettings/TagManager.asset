@@ -19,6 +19,7 @@ TagManager:
   - Checkpoint
   - Switch
   - Block
+  - Spikes
   layers:
   - Default
   - TransparentFX

@@ -435,7 +435,7 @@ public class MovimientoPlayer : MonoBehaviour
     IEnumerator AttackSound()
     {
         CanAttack = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
         CanAttack = true;
 
     }
@@ -443,7 +443,7 @@ public class MovimientoPlayer : MonoBehaviour
     IEnumerator Invincibility()
     {
         CanTakeDamage = false;
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1f);
         CanTakeDamage = true;
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -454,6 +454,14 @@ public class MovimientoPlayer : MonoBehaviour
             currentCheckpoint = collision.gameObject;
         }
 
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Spikes")
+        {
+            PlayerLife(1);
+        }
     }
 
     public void ShootUnlockPP()

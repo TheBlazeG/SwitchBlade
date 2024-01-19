@@ -38,6 +38,7 @@ public class Bala : MonoBehaviour
             SoundController.Instance.PlaySounds(Impact);
             other.GetComponent<EnemigoBeta>().Dao(dao);
             Destroy(gameObject);
+        }
 
         if (other.CompareTag("Switch"))
         {
