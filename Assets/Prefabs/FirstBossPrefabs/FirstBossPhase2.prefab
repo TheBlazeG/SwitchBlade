@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1590746860124934591}
   serializedVersion: 2
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0.362, y: 0.751, z: 0}
+  m_LocalPosition: {x: 0.362, y: 1, z: 0}
   m_LocalScale: {x: 0.11111112, y: 0.07142857, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 4785652822104553142}
   serializedVersion: 2
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0.834, y: 0.751, z: 0}
+  m_LocalPosition: {x: 0.834, y: 1, z: 0}
   m_LocalScale: {x: 0.11111112, y: 0.07142857, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -173,11 +173,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 858801653
-  m_SortingLayer: 1
+  m_SortingLayerID: 612417339
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1495384331, guid: 31cae808dcdcac949a38fefb7dbdc817, type: 3}
-  m_Color: {r: 1, g: 0.98255557, b: 0.5990566, a: 1}
+  m_Color: {r: 1, g: 0.6933962, b: 0.974251, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -299,6 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletType:
+  - {fileID: 7957053713505198765, guid: fa10a0d33d6036342911135d3ced9f97, type: 3}
   - {fileID: 9101786515398737763, guid: 7119b5243991ee34ea4a225a54c4a9a9, type: 3}
   bulletSpawnPlace: {fileID: 5210382964244716105}
   firstBossShootTime: 2.8

@@ -6,13 +6,14 @@ public class FirstBossManager : MonoBehaviour
 {
     [SerializeField] int firstBossHealth;
     [SerializeField] private List<GameObject> firstBossPhases;
-    [SerializeField] private GameObject projectilesUpgrade, upgradeSpawn;
+    [SerializeField] private GameObject projectilesUpgrade, upgradeSpawn, bossSpawn;
     public int firstBossCurrentPhase = 0, firstBossHealthTemp;
     public bool bossDefeated = false;
 
     private void Start()
     {
         firstBossHealthTemp = firstBossHealth;
+        Instantiate(firstBossPhases[0], bossSpawn.transform.position, Quaternion.identity);
     }
 
     private void Update()
@@ -20,7 +21,7 @@ public class FirstBossManager : MonoBehaviour
 
         if (firstBossHealthTemp <= 0 && firstBossCurrentPhase <= 1)
         {
-            Instantiate(firstBossPhases[firstBossCurrentPhase + 1]);
+            Instantiate(firstBossPhases[firstBossCurrentPhase + 1], bossSpawn.transform.position, Quaternion.identity);
             firstBossHealthTemp = firstBossHealth;
             firstBossCurrentPhase++;
         }

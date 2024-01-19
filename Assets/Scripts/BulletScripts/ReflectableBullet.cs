@@ -8,7 +8,7 @@ public class ReflectableBullet : MonoBehaviour
     [SerializeField] float reflectableBulletSpeed;
     GameObject reflectableBulletPlayer;
     int reflectableBulletOrientation = 1;
-    private float timer = 10;
+    private float timer = 8;
     Vector2 reflectableBulletDirection;
     MovimientoPlayer movimientoPlayer;
 
@@ -57,5 +57,6 @@ public class ReflectableBullet : MonoBehaviour
         {
             movimientoPlayer.PlayerLife(1);
         }
+
     }
 }

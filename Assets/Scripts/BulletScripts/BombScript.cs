@@ -7,6 +7,13 @@ public class BombScript : MonoBehaviour
     [SerializeField] private GameObject explotionArea;
     [SerializeField] private float explotionTimer, explotionAreaActiveTime;
     private bool active = false;
+    Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     private void Update()
     {
         if (active)
@@ -16,6 +23,7 @@ public class BombScript : MonoBehaviour
 
         if (explotionTimer <= 0 ) 
         {
+            animator.SetBool("exploted", true);
             explotionAreaActiveTime -= Time.deltaTime;
             explotionArea.gameObject.SetActive(true);
         }
