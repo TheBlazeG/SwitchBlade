@@ -57,5 +57,6 @@ public class ReflectableBullet : MonoBehaviour
         {
             movimientoPlayer.PlayerLife(1);
         }
+
     }
 }
