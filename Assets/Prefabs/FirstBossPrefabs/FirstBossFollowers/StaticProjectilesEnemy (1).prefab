@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7314080070929450590}
   - component: {fileID: 3572072503995340210}
   - component: {fileID: -7262065623551397686}
+  - component: {fileID: 8032863927650211271}
   m_Layer: 0
   m_Name: StaticProjectilesEnemy (1)
   m_TagString: StaticProjectileEnemy
@@ -72,11 +73,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 858801653
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.06345675, b: 0.57076585, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -147,3 +148,24 @@ MonoBehaviour:
   bulletHitsLeft: 1
   staticEnemyShootTime: 3
   staticEnemyFirstShootTime: 8
+--- !u!95 &8032863927650211271
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7372281809428981841}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 89bb6b32d2f01bf4d8197ec89ab0fd34, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

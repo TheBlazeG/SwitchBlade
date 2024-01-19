@@ -11,11 +11,13 @@ public class ExplosiveBullet : MonoBehaviour
     private float timer = 0.2f;
     private bool exploted = false;
     Vector2 explosiveBulletDirection;
+    Animator animator;
 
     private void Start()
     {
         explosiveBulletRigidbody2D = GetComponent<Rigidbody2D>();
         explosiveBulletPlayer = GameObject.FindGameObjectWithTag("Player");
+        animator = GetComponent<Animator>();
 
         explosiveBulletDirection = explosiveBulletPlayer.transform.position - transform.position;
 
@@ -27,6 +29,7 @@ public class ExplosiveBullet : MonoBehaviour
         
         if (exploted)
         {
+            animator.SetBool("exploted", true);
             timer -= Time.deltaTime;
             if (timer <= 0) 
             {
