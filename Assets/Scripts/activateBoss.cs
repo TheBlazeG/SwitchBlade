@@ -6,8 +6,15 @@ using UnityEngine;
 public class activateBoss : MonoBehaviour
 {
     [SerializeField] private GameObject boss, spawn;
+    [SerializeField] private int musicTrack;
     private bool activatedOnce = false;
     public bool bossActive = true;
+    musicController musicController;
+
+    private void Start()
+    {
+        musicController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<musicController>();
+    }
 
     private void Update()
     {
@@ -25,7 +32,8 @@ public class activateBoss : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            
+            musicController.musicTrack = musicTrack;
+            musicController.changedMusic = true;
             Instantiate(boss, spawn.transform.position, Quaternion.identity);
         }
         activatedOnce = true;
