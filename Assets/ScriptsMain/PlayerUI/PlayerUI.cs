@@ -12,6 +12,8 @@ public class PlayerUI : MonoBehaviour
     public Color skillImageActiveColor, skillImageDeactiveColor;
     public bool skillImageState = true;
 
+    public MovimientoPlayer canSwitch;
+
     private void Update()
     {
         ChangeSkillImageState();
@@ -44,7 +46,7 @@ public class PlayerUI : MonoBehaviour
     //Changes color
     public void ChangeSkillImageState()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E) && canSwitch.SwitchUnlock)
         {
             if (skillImageState)
             {

@@ -71,6 +71,7 @@ public class MovimientoPlayer : MonoBehaviour
     public bool Chicken;
     public float ChickenMore;
     private bool ShootUnlock;
+    public bool SwitchUnlock = false;
 
     [Header("PlayerUI")]
     public PlayerUI playerUI;
@@ -454,6 +455,11 @@ public class MovimientoPlayer : MonoBehaviour
             currentCheckpoint = collision.gameObject;
         }
 
+        if(collision.gameObject.tag == "SwitchUnlock")
+        {
+            SwitchUnlock = true;
+            Destroy(collision.gameObject);
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
