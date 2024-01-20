@@ -166,6 +166,7 @@ MonoBehaviour:
   explotionArea: {fileID: 8219847023482309620}
   explotionTimer: 1
   explotionAreaActiveTime: 0.2
+  explosionSound: {fileID: 8300000, guid: 4d16f3e649bbf144eb256371291a6722, type: 3}
 --- !u!95 &5983859699137535722
 Animator:
   serializedVersion: 5

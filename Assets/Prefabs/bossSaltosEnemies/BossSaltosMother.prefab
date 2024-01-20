@@ -1806,6 +1806,26 @@ PrefabInstance:
       value: BossSaltos
       objectReference: {fileID: 0}
     - target: {fileID: 5982063618547184495, guid: 43913db8a4e1c2d42bea65a58a82dbe7, type: 3}
+      propertyPath: die
+      value: 
+      objectReference: {fileID: 8300000, guid: fc7cf60a3b0b2bf4aa3ca4a5749db8a3, type: 3}
+    - target: {fileID: 5982063618547184495, guid: 43913db8a4e1c2d42bea65a58a82dbe7, type: 3}
+      propertyPath: hurt
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d2f0d14028e0ee4ca56f117c79a003c, type: 3}
+    - target: {fileID: 5982063618547184495, guid: 43913db8a4e1c2d42bea65a58a82dbe7, type: 3}
+      propertyPath: laugh
+      value: 
+      objectReference: {fileID: 8300000, guid: 581ec924b1bc84d4cbd834f0944bb120, type: 3}
+    - target: {fileID: 5982063618547184495, guid: 43913db8a4e1c2d42bea65a58a82dbe7, type: 3}
+      propertyPath: bounce
+      value: 
+      objectReference: {fileID: 8300000, guid: 18e146e5678ead44884460564c001885, type: 3}
+    - target: {fileID: 5982063618547184495, guid: 43913db8a4e1c2d42bea65a58a82dbe7, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 8300000, guid: 6961983888264764fbdc76779d0d937e, type: 3}
+    - target: {fileID: 5982063618547184495, guid: 43913db8a4e1c2d42bea65a58a82dbe7, type: 3}
       propertyPath: facingPlayer
       value: -1
       objectReference: {fileID: 0}

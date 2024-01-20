@@ -10,6 +10,7 @@ public class FirstBossFollowersLeft : MonoBehaviour
     FirstBossScript boss;
     MovimientoPlayer movimientoPlayer;
     Animator animator;
+    [SerializeField] AudioClip shootAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +34,8 @@ public class FirstBossFollowersLeft : MonoBehaviour
 
     void ShootReflectableBulletToPlayer()
     {
-        
-        
+
+        SoundController.Instance.PlaySounds(shootAudio);
         Instantiate(reflectableBullets, transform.position, Quaternion.identity);
     }
 

@@ -10,6 +10,9 @@ public class FirstBossScript : MonoBehaviour
     private FirstBossManager bossManager;
     public bool firstBossAttacking = false;
     Animator animator;
+
+    [Header("Sounds")]
+    [SerializeField] AudioClip Hurt, Die, explosionSound;
     
 
     private void Start()
@@ -24,6 +27,7 @@ public class FirstBossScript : MonoBehaviour
     {
         if (firstBossHealth <= 0 && phase <= 2)
         {
+            
             Destroy(gameObject);
         }
 
@@ -60,6 +64,7 @@ public class FirstBossScript : MonoBehaviour
     IEnumerator hurt()
     {
         animator.SetBool("hurt", true);
+        SoundController.Instance.PlaySounds(Hurt);
         yield return new WaitForSeconds(.7f);
         animator.SetBool("hurt", false);
     }
@@ -67,8 +72,10 @@ public class FirstBossScript : MonoBehaviour
     IEnumerator death () 
     {
         animator.SetBool("death", true);
+        SoundController.Instance.PlaySounds(Die);
         yield return new WaitForSeconds(4f);
         bossManager.bossDefeated = true;
+        SoundController.Instance.PlaySounds(explosionSound);
         Destroy(gameObject);
     }
 }

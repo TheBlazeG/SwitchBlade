@@ -331,6 +331,8 @@ MonoBehaviour:
   firstBossCurrentPhase: 0
   firstBossHealthTemp: 0
   bossDefeated: 0
+  initialLaugh: {fileID: 8300000, guid: 248ad8fbb4ac7c14985c5772a2d0a758, type: 3}
+  changePhase: {fileID: 8300000, guid: 62f44c1cea484cb47a88d5430b8c7bd7, type: 3}
 --- !u!1 &6855947015526021868
 GameObject:
   m_ObjectHideFlags: 0

@@ -165,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosiveBulletSpeed: 500
   explotionRadius: {fileID: 8582838959104733338}
+  explosionSound: {fileID: 8300000, guid: 4d16f3e649bbf144eb256371291a6722, type: 3}
 --- !u!95 &4891068321009464419
 Animator:
   serializedVersion: 5

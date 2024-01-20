@@ -20,9 +20,11 @@ public class BossSaltos : MonoBehaviour
     private GameObject player;
     MovimientoPlayer movimientoPlayer;
     Animator animator;
+    [SerializeField] AudioClip laugh, hurt, explosion, bounce, die;
 
     private void Start()
     {
+        SoundController.Instance.PlaySounds(laugh);
         rbBossSaltos = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         movimientoPlayer = player.GetComponent<MovimientoPlayer>();
@@ -61,7 +63,7 @@ public class BossSaltos : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            StartCoroutine(Die());
         }
 
         if (jumpsLeft <= 0 && thrusting)
@@ -155,6 +157,7 @@ public class BossSaltos : MonoBehaviour
     {
         if (collision.gameObject.tag == "impactWallX")
         {
+            SoundController.Instance.PlaySounds(bounce);
             thrustOrientationX *= -1;
             if (thrusting)
             {
@@ -164,6 +167,7 @@ public class BossSaltos : MonoBehaviour
 
         if (collision.gameObject.tag == "impactWallY")
         {
+            SoundController.Instance.PlaySounds(bounce);
             thrustOrientationY *= -1;
             if (thrusting && thrustOrientationY == -1)
             {
@@ -205,6 +209,7 @@ public class BossSaltos : MonoBehaviour
 
     void TakeDamage(int damage)
     {
+        SoundController.Instance.PlaySounds(hurt);
         health -= damage;
         StartCoroutine(animateHurt());
         
@@ -241,5 +246,17 @@ public class BossSaltos : MonoBehaviour
         beingHit = true;
         yield return new WaitForSeconds(.5f);
         beingHit = false;
+    }
+
+    IEnumerator Die()
+    {
+        bossSaltosSpeed[phase] = 0;
+        thrusting = false;
+        SoundController.Instance.PlaySounds(die);
+        yield return new WaitForSeconds(7f);
+        animator.SetBool("died", true);
+        SoundController.Instance.PlaySounds(explosion);
+        yield return new WaitForSeconds(.3f);
+        Destroy(gameObject);
     }
 }

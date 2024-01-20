@@ -148,6 +148,7 @@ MonoBehaviour:
   bulletHitsLeft: 1
   staticEnemyShootTime: 3
   staticEnemyFirstShootTime: 2
+  shootAudio: {fileID: 8300000, guid: b7107b2b18ced1b408b3cda7a2643214, type: 3}
 --- !u!95 &3337395781440027739
 Animator:
   serializedVersion: 5

@@ -12,6 +12,7 @@ public class GranadeScript : MonoBehaviour
     private bool exploted = false;
     BossSaltos boss;
     Animator animator;
+    [SerializeField] AudioClip explosionSound;
 
     private void Start()
     {
@@ -31,6 +32,7 @@ public class GranadeScript : MonoBehaviour
         {
             animator.SetBool("exploted", true);
             timer -= Time.deltaTime;
+            SoundController.Instance.PlaySounds(explosionSound);
             if (timer <= 0)
             {
                 Destroy(gameObject);

@@ -10,8 +10,12 @@ public class FirstBossManager : MonoBehaviour
     public int firstBossCurrentPhase = 0, firstBossHealthTemp;
     public bool bossDefeated = false;
 
+    [Header("Sounds")]
+    [SerializeField] AudioClip initialLaugh, changePhase;
+
     private void Start()
     {
+        SoundController.Instance.PlaySounds(initialLaugh);
         firstBossHealthTemp = firstBossHealth;
         Instantiate(firstBossPhases[0], bossSpawn.transform.position, Quaternion.identity);
     }
@@ -21,6 +25,7 @@ public class FirstBossManager : MonoBehaviour
 
         if (firstBossHealthTemp <= 0 && firstBossCurrentPhase <= 1)
         {
+            SoundController.Instance.PlaySounds(changePhase);
             Instantiate(firstBossPhases[firstBossCurrentPhase + 1], bossSpawn.transform.position, Quaternion.identity);
             firstBossHealthTemp = firstBossHealth;
             firstBossCurrentPhase++;

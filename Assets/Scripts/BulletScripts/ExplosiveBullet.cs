@@ -12,6 +12,7 @@ public class ExplosiveBullet : MonoBehaviour
     private bool exploted = false;
     Vector2 explosiveBulletDirection;
     Animator animator;
+    [SerializeField] AudioClip explosionSound;
 
     private void Start()
     {
@@ -35,6 +36,7 @@ public class ExplosiveBullet : MonoBehaviour
         if (exploted)
         {
             animator.SetBool("exploted", true);
+            SoundController.Instance.PlaySounds(explosionSound);
             timer -= Time.deltaTime;
             if (timer <= 0) 
             {
