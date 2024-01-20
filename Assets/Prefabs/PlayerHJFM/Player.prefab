@@ -533,7 +533,7 @@ MonoBehaviour:
   radioTecho: 0.8
   multiplicadorVelocidadAgachado: 0.3
   colisionadorAgachado: {fileID: 8908010824547197463}
-  MaxLife: 10
+  MaxLife: 20
   life: 0
   currentCheckpoint: {fileID: 0}
   constroladorbala: {fileID: 3469944278947778193}
@@ -544,6 +544,7 @@ MonoBehaviour:
   limitChicken: 5
   Chicken: 0
   ChickenMore: 0
+  SwitchUnlock: 0
   playerUI: {fileID: 0}
   SwordAttack: {fileID: 8300000, guid: 6e3ebd8aadbc75940903a827c166af84, type: 3}
   SwordPlayer: {fileID: 8300000, guid: 91182a215edeb894285127cd6a0facfc, type: 3}

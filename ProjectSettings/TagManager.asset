@@ -21,6 +21,7 @@ TagManager:
   - Block
   - Spikes
   - SwitchUnlock
+  - BossDetector
   layers:
   - Default
   - TransparentFX

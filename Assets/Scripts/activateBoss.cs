@@ -30,14 +30,14 @@ public class activateBoss : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "BossDetector")
         {
             musicController.musicTrack = musicTrack;
             musicController.changedMusic = true;
             Instantiate(boss, spawn.transform.position, Quaternion.identity);
-        }
-        activatedOnce = true;
+            activatedOnce = true;
 
-        gameObject.SetActive(false);
+            gameObject.SetActive(false);
+        }
     }
 }
