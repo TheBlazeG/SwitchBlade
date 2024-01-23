@@ -55,7 +55,7 @@ public class MovimientoPlayer : MonoBehaviour
     [Header("Life")]
     public float MaxLife = 0;
     public float life = 0;
-    private bool DeathPlayer;
+    public bool DeathPlayer;
     private bool CanTakeDamage = true;
     [SerializeField] GameObject currentCheckpoint;
     
@@ -90,8 +90,14 @@ public class MovimientoPlayer : MonoBehaviour
     public AudioClip HealthSound;
     public AudioClip Down;
 
+    musicController musicController;
+    public activateBoss activateBoss;
+
     private void Start()
     {
+        Cursor.visible = false;
+
+        musicController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<musicController>();
         RB2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         DeathPlayer = false;
@@ -349,10 +355,8 @@ public class MovimientoPlayer : MonoBehaviour
 
     IEnumerator attack()
     {
-        animator.SetBool("Ataque", true);
-        yield return new WaitForSeconds(.0f);
-        animator.SetBool("Ataque", false);
-       
+       animator.Play("Attack");
+       yield return null;
     }
 
     IEnumerator dashplayer()
@@ -373,6 +377,14 @@ public class MovimientoPlayer : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         transform.position = currentCheckpoint.transform.position;
+        life = MaxLife;
+        DeathPlayer = false;
+        playerUI.SetMaxHealth(life);
+        musicController.musicTrack = 1;
+        musicController.changedMusic = true;
+        activateBoss.bossActivated = false;
+        animator.SetBool("Death", false);
+
     }
 
     public IEnumerator Bullet()
@@ -451,7 +463,6 @@ public class MovimientoPlayer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Checkpoint")
         {
-            Debug.Log("checkpoint changed");
             currentCheckpoint = collision.gameObject;
         }
 

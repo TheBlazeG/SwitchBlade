@@ -23,6 +23,11 @@ public class FirstBossFollowersLeft : MonoBehaviour
 
     private void Update()
     {
+        if (movimientoPlayer.DeathPlayer)
+        {
+            Destroy(gameObject);
+        }
+
         if (bulletHitsLeft <= 0)
         {
             boss.firstBossFollowersLeft--;

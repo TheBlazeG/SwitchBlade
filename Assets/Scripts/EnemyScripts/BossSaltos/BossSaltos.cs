@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
+using UnityEngine.SceneManagement;
 
 public class BossSaltos : MonoBehaviour
 {
@@ -258,5 +259,6 @@ public class BossSaltos : MonoBehaviour
         SoundController.Instance.PlaySounds(explosion);
         yield return new WaitForSeconds(.3f);
         Destroy(gameObject);
+        SceneManager.LoadScene("winScene");
     }
 }

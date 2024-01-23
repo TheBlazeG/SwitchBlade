@@ -42,6 +42,7 @@ public class EnemigoBeta : MonoBehaviour
     {   
         if(transform.position.x > player.transform.position.x)
         {
+            Debug.Log("derecha");
             RB2D.AddForce(new Vector2(Knockbackforce * Push, Up));
         }
         else

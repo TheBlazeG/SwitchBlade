@@ -281,9 +281,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseLife: 10
-  Knockbackforce: 400
+  Knockbackforce: 300
   RB2D: {fileID: 1556105215173537077}
-  Up: 200
+  Up: 75
   player: {fileID: 0}
 --- !u!114 &4570920840443591644
 MonoBehaviour:

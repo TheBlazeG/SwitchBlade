@@ -25,6 +25,16 @@ public class FirstBossScript : MonoBehaviour
 
     private void Update()
     {
+        if(bossManager.defeatedPlayer)
+        {
+            Destroy(gameObject);
+        }
+
+        if(bossManager.bossDefeated) 
+        {
+            Destroy(gameObject);
+        }
+
         if (firstBossHealth <= 0 && phase <= 2)
         {
             

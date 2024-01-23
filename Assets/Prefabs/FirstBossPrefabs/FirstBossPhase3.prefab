@@ -256,7 +256,7 @@ MonoBehaviour:
   - {fileID: 7810330231646966104}
   firstBossAttacking: 0
   Hurt: {fileID: 8300000, guid: 4065504d51061d94fb080c9e076ee654, type: 3}
-  Die: {fileID: 8300000, guid: 31d3fc2109c99e643ba79d54c31c95d6, type: 3}
+  Die: {fileID: 8300000, guid: 687f09242a0ce514d8ce5fa760bb3539, type: 3}
   explosionSound: {fileID: 8300000, guid: 6961983888264764fbdc76779d0d937e, type: 3}
 --- !u!114 &-1958473073452698734
 MonoBehaviour:
