@@ -3,7 +3,7 @@ guid: 66453c654294d2045aa5eb98e5ea9f7d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +64,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -74,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -86,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -98,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -110,6 +116,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -2352,115 +2359,114 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GrassTiles_90: 1237538160
-      GrassTiles_5: 1901992341
-      GrassTiles_31: 2000216578
-      GrassTiles_77: 1561847698
-      GrassTiles_37: -180309817
-      GrassTiles_45: -715601620
-      GrassTiles_60: -1738181412
-      GrassTiles_93: -1603442213
-      GrassTiles_101: -1476074557
-      GrassTiles_11: 1146215860
-      GrassTiles_18: -523952955
-      GrassTiles_43: -472603820
-      GrassTiles_21: -1825148926
       GrassTiles_0: 1562939912
-      GrassTiles_61: 1685898208
-      GrassTiles_81: -621511057
-      GrassTiles_95: 1165701827
-      GrassTiles_30: -1827740070
-      GrassTiles_80: 954218102
-      GrassTiles_55: 676920155
-      GrassTiles_33: -833557704
-      GrassTiles_78: -2144253286
-      GrassTiles_56: -1672308542
-      GrassTiles_12: 1205494177
-      GrassTiles_94: 2020574313
-      GrassTiles_92: 136032589
-      GrassTiles_67: 531430479
-      GrassTiles_4: 1061988685
-      GrassTiles_84: -2095397391
-      GrassTiles_52: -620769567
-      GrassTiles_68: 133010081
-      GrassTiles_79: -1063136330
-      GrassTiles_27: -1506568927
-      GrassTiles_38: -1707303549
-      GrassTiles_24: 963333942
-      GrassTiles_100: 1303630072
-      GrassTiles_20: -636035950
-      GrassTiles_76: 1349557000
-      GrassTiles_105: 127792028
-      GrassTiles_85: 1312885027
-      GrassTiles_64: 965584137
-      GrassTiles_58: 1821092135
-      GrassTiles_103: -695547895
-      GrassTiles_23: -854905334
-      GrassTiles_75: 955459681
-      GrassTiles_51: 585432613
-      GrassTiles_72: 986277343
-      GrassTiles_99: 1805369842
-      GrassTiles_71: -398153636
-      GrassTiles_26: 896677534
-      GrassTiles_83: 1763518602
-      GrassTiles_8: 733940393
-      GrassTiles_54: 826707987
-      GrassTiles_62: -96672907
-      GrassTiles_39: -1266666787
-      GrassTiles_57: -1198005591
-      GrassTiles_36: 146100222
-      GrassTiles_69: -1997743432
-      GrassTiles_34: 1369149110
-      GrassTiles_6: 331078297
-      GrassTiles_59: -907014064
-      GrassTiles_86: -575037627
-      GrassTiles_3: 1090625347
-      GrassTiles_74: -581874099
       GrassTiles_1: 134760792
-      GrassTiles_98: -1710635589
-      GrassTiles_42: 508728892
-      GrassTiles_65: -117055825
-      GrassTiles_40: -1016592330
-      GrassTiles_14: 414982514
-      GrassTiles_46: 1104148038
       GrassTiles_10: 901712695
-      GrassTiles_50: -1800971148
-      GrassTiles_96: -680198328
-      GrassTiles_91: -350854732
-      GrassTiles_87: -1644330756
-      GrassTiles_49: 201936906
-      GrassTiles_35: 1725178376
-      GrassTiles_89: 1511687159
-      GrassTiles_70: 1131294783
-      GrassTiles_47: -1197615239
-      GrassTiles_7: -83024998
-      GrassTiles_48: 682185253
-      GrassTiles_97: -1070741665
-      GrassTiles_22: 52899752
-      GrassTiles_17: -776427734
-      GrassTiles_9: 275800343
-      GrassTiles_13: -926729889
-      GrassTiles_28: 1473188936
-      GrassTiles_41: 1077164580
-      GrassTiles_88: -655963933
-      GrassTiles_66: -805843090
-      GrassTiles_29: -1273710586
+      GrassTiles_100: 1303630072
+      GrassTiles_101: -1476074557
       GrassTiles_102: -548929002
-      GrassTiles_82: -1202501127
-      GrassTiles_53: -1364090066
-      GrassTiles_63: -1986500158
-      GrassTiles_32: -1462025957
-      GrassTiles_16: -362314235
-      GrassTiles_25: -775885595
-      GrassTiles_2: -1067850370
-      GrassTiles_15: 1031892476
+      GrassTiles_103: -695547895
       GrassTiles_104: 1349537207
-      GrassTiles_44: 1609931947
+      GrassTiles_105: 127792028
+      GrassTiles_11: 1146215860
+      GrassTiles_12: 1205494177
+      GrassTiles_13: -926729889
+      GrassTiles_14: 414982514
+      GrassTiles_15: 1031892476
+      GrassTiles_16: -362314235
+      GrassTiles_17: -776427734
+      GrassTiles_18: -523952955
       GrassTiles_19: 663246161
+      GrassTiles_2: -1067850370
+      GrassTiles_20: -636035950
+      GrassTiles_21: -1825148926
+      GrassTiles_22: 52899752
+      GrassTiles_23: -854905334
+      GrassTiles_24: 963333942
+      GrassTiles_25: -775885595
+      GrassTiles_26: 896677534
+      GrassTiles_27: -1506568927
+      GrassTiles_28: 1473188936
+      GrassTiles_29: -1273710586
+      GrassTiles_3: 1090625347
+      GrassTiles_30: -1827740070
+      GrassTiles_31: 2000216578
+      GrassTiles_32: -1462025957
+      GrassTiles_33: -833557704
+      GrassTiles_34: 1369149110
+      GrassTiles_35: 1725178376
+      GrassTiles_36: 146100222
+      GrassTiles_37: -180309817
+      GrassTiles_38: -1707303549
+      GrassTiles_39: -1266666787
+      GrassTiles_4: 1061988685
+      GrassTiles_40: -1016592330
+      GrassTiles_41: 1077164580
+      GrassTiles_42: 508728892
+      GrassTiles_43: -472603820
+      GrassTiles_44: 1609931947
+      GrassTiles_45: -715601620
+      GrassTiles_46: 1104148038
+      GrassTiles_47: -1197615239
+      GrassTiles_48: 682185253
+      GrassTiles_49: 201936906
+      GrassTiles_5: 1901992341
+      GrassTiles_50: -1800971148
+      GrassTiles_51: 585432613
+      GrassTiles_52: -620769567
+      GrassTiles_53: -1364090066
+      GrassTiles_54: 826707987
+      GrassTiles_55: 676920155
+      GrassTiles_56: -1672308542
+      GrassTiles_57: -1198005591
+      GrassTiles_58: 1821092135
+      GrassTiles_59: -907014064
+      GrassTiles_6: 331078297
+      GrassTiles_60: -1738181412
+      GrassTiles_61: 1685898208
+      GrassTiles_62: -96672907
+      GrassTiles_63: -1986500158
+      GrassTiles_64: 965584137
+      GrassTiles_65: -117055825
+      GrassTiles_66: -805843090
+      GrassTiles_67: 531430479
+      GrassTiles_68: 133010081
+      GrassTiles_69: -1997743432
+      GrassTiles_7: -83024998
+      GrassTiles_70: 1131294783
+      GrassTiles_71: -398153636
+      GrassTiles_72: 986277343
       GrassTiles_73: 1034837967
-  spritePackingTag: 
+      GrassTiles_74: -581874099
+      GrassTiles_75: 955459681
+      GrassTiles_76: 1349557000
+      GrassTiles_77: 1561847698
+      GrassTiles_78: -2144253286
+      GrassTiles_79: -1063136330
+      GrassTiles_8: 733940393
+      GrassTiles_80: 954218102
+      GrassTiles_81: -621511057
+      GrassTiles_82: -1202501127
+      GrassTiles_83: 1763518602
+      GrassTiles_84: -2095397391
+      GrassTiles_85: 1312885027
+      GrassTiles_86: -575037627
+      GrassTiles_87: -1644330756
+      GrassTiles_88: -655963933
+      GrassTiles_89: 1511687159
+      GrassTiles_9: 275800343
+      GrassTiles_90: 1237538160
+      GrassTiles_91: -350854732
+      GrassTiles_92: 136032589
+      GrassTiles_93: -1603442213
+      GrassTiles_94: 2020574313
+      GrassTiles_95: 1165701827
+      GrassTiles_96: -680198328
+      GrassTiles_97: -1070741665
+      GrassTiles_98: -1710635589
+      GrassTiles_99: 1805369842
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

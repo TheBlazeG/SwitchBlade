@@ -3,7 +3,7 @@ guid: 3a6f603276eca1e4dab29831a1cfd471
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +64,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -74,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -86,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -98,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -110,6 +116,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1071,54 +1078,53 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DirtBackgroundTiles_24: -60070124
-      DirtBackgroundTiles_9: -1151512020
-      DirtBackgroundTiles_14: -1949055172
-      DirtBackgroundTiles_41: -1244496096
-      DirtBackgroundTiles_11: -564829682
-      DirtBackgroundTiles_18: 1606754254
-      DirtBackgroundTiles_20: -1933492334
-      DirtBackgroundTiles_29: 1870762469
-      DirtBackgroundTiles_44: 1321793809
-      DirtBackgroundTiles_30: 1011434133
-      DirtBackgroundTiles_15: -243610092
-      DirtBackgroundTiles_3: 1260165599
-      DirtBackgroundTiles_36: -781010500
       DirtBackgroundTiles_0: -247040415
-      DirtBackgroundTiles_5: -1644918242
+      DirtBackgroundTiles_1: -1672826114
+      DirtBackgroundTiles_10: 1494160136
+      DirtBackgroundTiles_11: -564829682
+      DirtBackgroundTiles_12: -517207410
+      DirtBackgroundTiles_13: 1914050249
+      DirtBackgroundTiles_14: -1949055172
+      DirtBackgroundTiles_15: -243610092
+      DirtBackgroundTiles_16: 424262319
+      DirtBackgroundTiles_17: 1520271633
+      DirtBackgroundTiles_18: 1606754254
+      DirtBackgroundTiles_19: 1810263920
+      DirtBackgroundTiles_2: -1736663941
+      DirtBackgroundTiles_20: -1933492334
+      DirtBackgroundTiles_21: 857365937
+      DirtBackgroundTiles_22: 844177418
+      DirtBackgroundTiles_23: 294760288
+      DirtBackgroundTiles_24: -60070124
+      DirtBackgroundTiles_25: -463225632
+      DirtBackgroundTiles_26: -118725373
+      DirtBackgroundTiles_27: -2024636361
+      DirtBackgroundTiles_28: 733188273
+      DirtBackgroundTiles_29: 1870762469
+      DirtBackgroundTiles_3: 1260165599
+      DirtBackgroundTiles_30: 1011434133
+      DirtBackgroundTiles_31: 327114390
+      DirtBackgroundTiles_32: -116677826
+      DirtBackgroundTiles_33: 1052401300
+      DirtBackgroundTiles_34: 566289707
+      DirtBackgroundTiles_35: -2060473909
+      DirtBackgroundTiles_36: -781010500
       DirtBackgroundTiles_37: 563134827
       DirtBackgroundTiles_38: 1776386712
-      DirtBackgroundTiles_35: -2060473909
-      DirtBackgroundTiles_25: -463225632
-      DirtBackgroundTiles_33: 1052401300
-      DirtBackgroundTiles_10: 1494160136
-      DirtBackgroundTiles_7: 367300504
-      DirtBackgroundTiles_17: 1520271633
-      DirtBackgroundTiles_43: -1390270050
-      DirtBackgroundTiles_4: -494355332
-      DirtBackgroundTiles_32: -116677826
-      DirtBackgroundTiles_2: -1736663941
-      DirtBackgroundTiles_21: 857365937
-      DirtBackgroundTiles_16: 424262319
-      DirtBackgroundTiles_12: -517207410
-      DirtBackgroundTiles_19: 1810263920
-      DirtBackgroundTiles_31: 327114390
-      DirtBackgroundTiles_42: -1790002615
-      DirtBackgroundTiles_1: -1672826114
-      DirtBackgroundTiles_13: 1914050249
-      DirtBackgroundTiles_23: 294760288
-      DirtBackgroundTiles_40: 1800110404
-      DirtBackgroundTiles_34: 566289707
-      DirtBackgroundTiles_22: 844177418
-      DirtBackgroundTiles_27: -2024636361
-      DirtBackgroundTiles_8: -1099932193
-      DirtBackgroundTiles_6: -164320419
-      DirtBackgroundTiles_28: 733188273
       DirtBackgroundTiles_39: 515695455
-      DirtBackgroundTiles_26: -118725373
-  spritePackingTag: 
+      DirtBackgroundTiles_4: -494355332
+      DirtBackgroundTiles_40: 1800110404
+      DirtBackgroundTiles_41: -1244496096
+      DirtBackgroundTiles_42: -1790002615
+      DirtBackgroundTiles_43: -1390270050
+      DirtBackgroundTiles_44: 1321793809
+      DirtBackgroundTiles_5: -1644918242
+      DirtBackgroundTiles_6: -164320419
+      DirtBackgroundTiles_7: 367300504
+      DirtBackgroundTiles_8: -1099932193
+      DirtBackgroundTiles_9: -1151512020
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
