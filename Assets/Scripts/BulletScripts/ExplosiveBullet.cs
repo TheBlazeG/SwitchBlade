@@ -13,6 +13,8 @@ public class ExplosiveBullet : MonoBehaviour
     Vector2 explosiveBulletDirection;
     Animator animator;
     [SerializeField] AudioClip explosionSound;
+    public SoundController explotion;
+    GameObject pp;
 
     private void Start()
     {
@@ -23,6 +25,8 @@ public class ExplosiveBullet : MonoBehaviour
         explosiveBulletDirection = explosiveBulletPlayer.transform.position - transform.position;
 
         explotionRadius.gameObject.SetActive(false);
+        pp=GameObject.FindGameObjectWithTag("SoundController");
+        explotion = pp.GetComponent<SoundController>();
     }
 
     private void Update()
@@ -36,7 +40,7 @@ public class ExplosiveBullet : MonoBehaviour
         if (exploted)
         {
             animator.SetBool("exploted", true);
-            SoundController.Instance.PlaySounds(explosionSound);
+            explotion.PlaySounds(explosionSound);
             timer -= Time.deltaTime;
             if (timer <= 0) 
             {

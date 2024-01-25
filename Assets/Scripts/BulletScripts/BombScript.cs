@@ -9,6 +9,7 @@ public class BombScript : MonoBehaviour
     private bool active = false;
     Animator animator;
     [SerializeField] AudioClip explosionSound;
+    public SoundController explotion;
 
     private void Start()
     {
@@ -27,7 +28,7 @@ public class BombScript : MonoBehaviour
             animator.SetBool("exploted", true);
             explotionAreaActiveTime -= Time.deltaTime;
             explotionArea.gameObject.SetActive(true);
-            SoundController.Instance.PlaySounds(explosionSound);
+            explotion.PlaySounds(explosionSound);
         }
 
         if(explotionAreaActiveTime <= 0 ) 

@@ -166,6 +166,7 @@ MonoBehaviour:
   explosiveBulletSpeed: 500
   explotionRadius: {fileID: 8582838959104733338}
   explosionSound: {fileID: 8300000, guid: 9dc35710bc83f874d96dd02eb2896d7b, type: 3}
+  explotion: {fileID: 2092364881618001820, guid: 7e1ab327d60ce2a43834874c1abddf94, type: 3}
 --- !u!95 &4891068321009464419
 Animator:
   serializedVersion: 5
